@@ -1,11 +1,26 @@
 package com.fjcorona.springboot.user.endpoint.springbootuserendpoint.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class User {
 
+	@Id
+	@Column(name = "usr_id")
 	private Long id;
+	
+	@Column(name = "usr_name")
 	private String name;
+	
+	@Column(name = "usr_lastnme")
 	private String lastname;
+	
+	@Column(name = "usr_age")
 	private Integer age;
+	
+	@Column(name = "usr_active")
 	private Integer active;
 
 	public User() {
