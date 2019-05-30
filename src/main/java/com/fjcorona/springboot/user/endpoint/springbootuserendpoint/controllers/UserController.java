@@ -24,10 +24,6 @@ public class UserController {
 
 	@GetMapping("/users/{id}")
 	public User retriveOneById(@PathVariable Integer id) {
-		/*
-		User user = repository.findOne(id);
-		return user;
-		*/
 		return new User();
 	}
 }
