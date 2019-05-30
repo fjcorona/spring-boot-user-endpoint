@@ -26,7 +26,7 @@ public class UserController {
 	@GetMapping("/users/{id}")
 	public User retriveOneById(@PathVariable Integer id) {
 		Optional<User> user = repository.findById(id);
-		// System.out.println(user.get());
-		return new User();
+		return user.get();
 	}
+
 }
