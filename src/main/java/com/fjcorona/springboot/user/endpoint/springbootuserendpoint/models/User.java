@@ -8,19 +8,19 @@ import javax.persistence.Id;
 public class User {
 
 	@Id
-	@Column(name = "usr_id")
+	@Column(name = "id")
 	private Long id;
 	
-	@Column(name = "usr_name")
+	@Column(name = "name")
 	private String name;
 	
-	@Column(name = "usr_lastnme")
+	@Column(name = "lastnme")
 	private String lastname;
 	
-	@Column(name = "usr_age")
+	@Column(name = "age")
 	private Integer age;
 	
-	@Column(name = "usr_active")
+	@Column(name = "active")
 	private Integer active;
 
 	public User() {
