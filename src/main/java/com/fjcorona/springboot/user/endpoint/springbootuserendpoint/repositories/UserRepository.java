@@ -11,4 +11,5 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 	Optional<User> findById(Integer id);
 	@SuppressWarnings("unchecked")
 	User save(User user);
+	void deleteById(Integer id);
 }
