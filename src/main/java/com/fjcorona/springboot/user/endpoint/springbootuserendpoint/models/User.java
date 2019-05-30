@@ -12,16 +12,16 @@ public class User {
 	@Id
 	@Column(name = "usr_id")
 	private Integer id;
-	
+
 	@Column(name = "usr_name")
 	private String name;
-	
+
 	@Column(name = "usr_lastname")
 	private String lastname;
-	
+
 	@Column(name = "usr_age")
 	private Integer age;
-	
+
 	@Column(name = "usr_active")
 	private Integer active;
 
@@ -78,11 +78,9 @@ public class User {
 		this.active = active;
 	}
 
-	/*
 	@Override
 	public String toString() {
 		return String.format("User [id=%s, name=%s, lastname=%s, age=%s, active=%s]", id, name, lastname, age, active);
 	}
-	*/
 
 }
