@@ -24,8 +24,6 @@ public class User {
 
 	@Column(name = "usr_active")
 	private Integer active;
-	
-	// private Integer port;
 
 	public User() {
 
@@ -39,18 +37,6 @@ public class User {
 		this.age = age;
 		this.active = active;
 	}
-
-	/*
-	public User(Integer id, String name, String lastname, Integer age, Integer active, Integer port) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.lastname = lastname;
-		this.age = age;
-		this.active = active;
-		this.port = port;
-	}
-	*/
 
 	public Integer getId() {
 		return id;
@@ -96,21 +82,5 @@ public class User {
 	public String toString() {
 		return String.format("User [id=%s, name=%s, lastname=%s, age=%s, active=%s]", id, name, lastname, age, active);
 	}
-
-	/*
-	public Integer getPort() {
-		return port;
-	}
-
-	public void setPort(Integer port) {
-		this.port = port;
-	}
-
-	@Override
-	public String toString() {
-		return String.format("User [id=%s, name=%s, lastname=%s, age=%s, active=%s, port=%s]", id, name, lastname, age,
-				active, port);
-	}
-	*/
 
 }
