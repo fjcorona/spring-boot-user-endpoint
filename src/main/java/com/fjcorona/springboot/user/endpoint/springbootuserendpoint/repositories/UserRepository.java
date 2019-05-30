@@ -7,4 +7,5 @@ import com.fjcorona.springboot.user.endpoint.springbootuserendpoint.models.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 	List<User> findAll();
+	// User findOne(Integer id);
 }
