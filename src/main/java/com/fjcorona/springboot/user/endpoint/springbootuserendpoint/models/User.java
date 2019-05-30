@@ -1,0 +1,69 @@
+package com.fjcorona.springboot.user.endpoint.springbootuserendpoint.models;
+
+public class User {
+
+	private Long id;
+	private String name;
+	private String lastname;
+	private Integer age;
+	private Integer active;
+
+	public User() {
+
+	}
+
+	public User(Long id, String name, String lastname, Integer age, Integer active) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.lastname = lastname;
+		this.age = age;
+		this.active = active;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+	public Integer getActive() {
+		return active;
+	}
+
+	public void setActive(Integer active) {
+		this.active = active;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("User [id=%s, name=%s, lastname=%s, age=%s, active=%s]", id, name, lastname, age, active);
+	}
+
+}
