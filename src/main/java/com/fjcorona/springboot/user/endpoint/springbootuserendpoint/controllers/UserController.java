@@ -1,6 +1,7 @@
 package com.fjcorona.springboot.user.endpoint.springbootuserendpoint.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +25,8 @@ public class UserController {
 
 	@GetMapping("/users/{id}")
 	public User retriveOneById(@PathVariable Integer id) {
+		Optional<User> user = repository.findById(id);
+		// System.out.println(user.get());
 		return new User();
 	}
 }
