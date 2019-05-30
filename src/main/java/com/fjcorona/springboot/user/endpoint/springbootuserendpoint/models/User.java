@@ -76,9 +76,11 @@ public class User {
 		this.active = active;
 	}
 
+	/*
 	@Override
 	public String toString() {
 		return String.format("User [id=%s, name=%s, lastname=%s, age=%s, active=%s]", id, name, lastname, age, active);
 	}
+	*/
 
 }
