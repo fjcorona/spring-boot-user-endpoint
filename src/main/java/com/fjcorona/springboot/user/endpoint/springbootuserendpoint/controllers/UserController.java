@@ -29,7 +29,7 @@ public class UserController {
 	}
 
 	@GetMapping("/users/{id}")
-	public User retriveOneById(@PathVariable Integer id) {
+	public User retriveOneUserById(@PathVariable Integer id) {
 		Optional<User> user = repository.findById(id);
 		return user.get();
 	}
