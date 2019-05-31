@@ -82,8 +82,17 @@ public class UserController {
 		return user.get();
 	}
 
-	@PutMapping("/users/active-deactive/{id}/{active}")
-	public ResponseEntity<Object> deactiveUser(@PathVariable Integer id, @PathVariable Integer active) {
+	@PutMapping("/users/active/{id}")
+	public ResponseEntity<Object> activeUser(@PathVariable Integer id) {
+		return this.activeDeactiveUser(id, 1);
+	}
+
+	@PutMapping("/users/deactive/{id}")
+	public ResponseEntity<Object> deactiveUser(@PathVariable Integer id) {
+		return this.activeDeactiveUser(id, 0);
+	}
+	
+	private ResponseEntity<Object> activeDeactiveUser(Integer id, Integer active) {
 		Optional<User> userOptional = repository.findById(id);
 
 		if (!userOptional.isPresent()) {
