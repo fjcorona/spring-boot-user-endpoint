@@ -5,12 +5,12 @@
 * [Database](#database)
 * [Bean](#bean)
 * [Repository](#repository)
-* [Controller](#Controller)
-	* [Create]()
-	* [Get All]()
-	* [Get By Id]()
-	* [Get All Active]()
-	* [Get Active By Id]()
+* [User Controller](#user-controller)
+	* [Create User](#create-user)
+	* [Get All Users](#get-all-users)
+	* [Get User By Id](#get-user-by-id)
+	* [Get All Active](#get-all-active-users)
+	* [Get Active By Id](#get-active-user-by-id)
 * [Postman](#postman)
 
 
@@ -26,14 +26,14 @@
 
 # Controller
 
-## Create
+## Create User
 
-## Get All
+## Get All Users
 
-## Get By Id
+## Get User By Id
 
-## Get All Active{#user-active-get-all}
+## Get All Active Users
 
-## Get Active By Id
+## Get Active User By Id
 
 # Postman
