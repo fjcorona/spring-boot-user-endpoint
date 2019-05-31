@@ -36,18 +36,6 @@ public class UserController {
 		return user.get();
 	}
 
-	@GetMapping("/users-active")
-	public List<User> retriveAllActiveUsers() {
-		List<User> users = repository.findByActive(1);
-		return users;
-	}
-
-	@GetMapping("/users-active/{id}")
-	public User retriveOneActiveUserById(@PathVariable Integer id) {
-		Optional<User> user = repository.findByActiveAndId(1, id);
-		return user.get();
-	}
-
 	@PostMapping("/users")
 	public ResponseEntity<Object> createUser(@RequestBody User user) {
 		user.setActive(1);
@@ -80,6 +68,18 @@ public class UserController {
 	@DeleteMapping("/users/{id}")
 	public void deleteStudent(@PathVariable Integer id) {
 		repository.deleteById(id);
+	}
+
+	@GetMapping("/users-active")
+	public List<User> retriveAllActiveUsers() {
+		List<User> users = repository.findByActive(1);
+		return users;
+	}
+
+	@GetMapping("/users-active/{id}")
+	public User retriveOneActiveUserById(@PathVariable Integer id) {
+		Optional<User> user = repository.findByActiveAndId(1, id);
+		return user.get();
 	}
 
 }
