@@ -1,5 +1,3 @@
-# User Micro Service With Spring Boot
-
 * [Introduction](#introduction)
 * [Dependencies](#dependencies)
 * [Database](#database)
