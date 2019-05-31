@@ -14,26 +14,26 @@
 * [Postman]()
 
 
-# Introduction {#introduction}
+# Introduction
 
-# Necessary Dependencies {#dependencies}
+# Necessary Dependencies
 
-# Database {#dependency}
+# Database
 
-# Bean {#bean}
+# Bean
 
-# Repository {#repository}
+# Repository
 
-# Controller {#controller}
+# Controller
 
-## Create {#user-create}
+## Create
 
-## Get All {#user-get-all}
+## Get All
 
-## Get By Id {#user-get-by-id}
+## Get By Id
 
 ## Get All Active{#user-active-get-all}
 
-## Get Active By Id {#user-active-get-by-id}
+## Get Active By Id
 
-# Postman {#postman}
+# Postman
