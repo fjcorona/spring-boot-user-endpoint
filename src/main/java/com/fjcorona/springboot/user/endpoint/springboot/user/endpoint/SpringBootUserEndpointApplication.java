@@ -1,4 +1,4 @@
-package com.fjcorona.springboot.user.endpoint.springbootuserendpoint;
+package com.fjcorona.springboot.user.endpoint.springboot.user.endpoint;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
