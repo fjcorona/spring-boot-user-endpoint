@@ -29,7 +29,7 @@ When we are working with Spring Boot, the default port in which our application 
 
 ![application.properties](pictures/port/properties.png)
 
-```properties
+```
 spring.application.name=user-endpoint-service
 server.port=8888
 ```
