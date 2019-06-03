@@ -89,6 +89,7 @@ Spring Boot Developer Tools.
 ## _H2 Database Engine_
 
 H2 is a relational database management system written in Java. It can be embedded in Java applications or run in client-server mode.
+It is possible to create both in-memory tables.
 
 ```xml
 <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
@@ -102,7 +103,6 @@ H2 is a relational database management system written in Java. It can be embedde
 ## _Spring Boot Test Starter_
 
 Starter for testing Spring Boot applications with libraries including JUnit, Hamcrest and Mockito.
-It is possible to create both in-memory tables.
 
 ```xml
 <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
@@ -128,6 +128,39 @@ JUnit is a regression testing framework written by Erich Gamma and Kent Beck. It
 ``` 
 
 # _Database_
+
+As it was mentioned before ___H2 Engine___ is the _RDBMS_ we will use to persist our information. Due to it supplies us with the advantaje to make in-memory tables. It means that we don't really need to install nothing because we will have a Runtime database, which will be deleted once the execution of the application finishes. What doesn't mean a problem for learning effects. You should easily change H2 for annother database management such as ***MySQL*** or ***PostgreSQL***.
+
+We make the assumption we are working with JPA.
+
+By default, spring boot reads the [_data.sql_](src/main/resources/data.sql) file located at ___resources___ folder to create our temporal database.
+
+![data.sql](pictures/database/data.png)
+
+It is as simple as declare insert queries with the table, the fields and the info we need:
+
+```sql
+INSERT INTO users (usr_id, usr_name, usr_lastname, usr_age, usr_active)
+VALUES (10001, 'Javier', 'Corona', 30, 1);
+INSERT INTO users (usr_id, usr_name, usr_lastname, usr_age, usr_active)
+VALUES (10002, 'Francisco', 'Sánchez', 29, 1);
+INSERT INTO users (usr_id, usr_name, usr_lastname, usr_age, usr_active)
+VALUES (10003, 'Alejandra', 'López', 25, 0);
+INSERT INTO users (usr_id, usr_name, usr_lastname, usr_age, usr_active)
+VALUES (10004, 'Fernanda', 'Parra', 32, 1);
+INSERT INTO users (usr_id, usr_name, usr_lastname, usr_age, usr_active)
+VALUES (10005, 'Humberto', 'Lisboa', 22, 1);
+INSERT INTO users (usr_id, usr_name, usr_lastname, usr_age, usr_active)
+VALUES (10006, 'Paola', 'Duarte', 33, 1);
+INSERT INTO users (usr_id, usr_name, usr_lastname, usr_age, usr_active)
+VALUES (10007, 'Ernesto', 'Duarte', 33, 0);
+INSERT INTO users (usr_id, usr_name, usr_lastname, usr_age, usr_active)
+VALUES (10008, 'Filemón', 'Hernández', 25, 0);
+INSERT INTO users (usr_id, usr_name, usr_lastname, usr_age, usr_active)
+VALUES (10009, 'Pantaleón', 'Pérez', 23, 1);
+INSERT INTO users (usr_id, usr_name, usr_lastname, usr_age, usr_active)
+VALUES (10010, 'Serafino', 'Arriaga', 44, 1);
+```
 
 
 # _Bean_
