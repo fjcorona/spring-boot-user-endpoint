@@ -21,7 +21,9 @@
 
 # Introduction
 
-In this project you will find a small example with Spring Boot in which you will be able to perform CRUD oepraciones for users, as well as activate and deactivate them. All this in a very isolated way to a graphical interface, the way it will be done through endpoints that rest requests, which can be consumed from Postman or any other client that has the capacity to consume them.
+This project is especially focused on beginners, for all those who just want to know a quick and simple way to create microservices in spring boot.
+
+Here you will find a small example in which you will be able to perform CRUD oepraciones for users, as well as activate and deactivate them. All this in a very isolated way to a graphical interface, the way it will be done through endpoints that rest requests, which can be consumed from Postman or any other client that has the capacity to consume them.
 
 [![go up](pictures/go-up.png)](#menu)
 
@@ -42,6 +44,8 @@ I've selected the ___8888___ port, this way, my microservice will run in the nex
 [![go up](pictures/go-up.png)](#menu)
 
 # Dependencies
+
+This projects has been
 
 [![go up](pictures/go-up.png)](#menu)
 
