@@ -8,7 +8,7 @@
 	* [Spring Boot Developer Tools](#spring-boot-developer-tools)
 	* [H2 Database Engine](#h2-database-engine)
 	* [Spring Boot Test Starter](#spring-boot-test-starter)
-	* [JUnit] (#junit)
+	* [JUnit](#junit)
 * [Database](#database)
 * [Bean](#bean)
 * [Repository](#repository)
