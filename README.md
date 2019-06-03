@@ -27,7 +27,7 @@ In this project you will find a small example with Spring Boot in which you will
 
 When we are working with Spring Boot, the default port in which our application runs is ___8080___. In case this we want to change this default port, we have to take in account the [application.properties](src/main/resources/application.properties) file, here we can made some important configurations.
 
-![application.properties](pictures/properties.png)
+![application.properties](pictures/port/properties.png)
 
 ```properties
 spring.application.name=user-endpoint-service
