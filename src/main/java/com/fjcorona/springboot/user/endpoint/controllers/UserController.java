@@ -1,4 +1,4 @@
-package com.fjcorona.springboot.user.endpoint.springboot.user.endpoint.controllers;
+package com.fjcorona.springboot.user.endpoint.controllers;
 
 import java.net.URI;
 import java.util.List;
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.fjcorona.springboot.user.endpoint.springboot.user.endpoint.models.User;
-import com.fjcorona.springboot.user.endpoint.springboot.user.endpoint.repositories.UserRepository;
+import com.fjcorona.springboot.user.endpoint.models.User;
+import com.fjcorona.springboot.user.endpoint.repositories.UserRepository;
 
 @RestController
 public class UserController {

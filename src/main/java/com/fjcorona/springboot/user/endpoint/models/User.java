@@ -1,4 +1,4 @@
-package com.fjcorona.springboot.user.endpoint.springboot.user.endpoint.models;
+package com.fjcorona.springboot.user.endpoint.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
