@@ -88,7 +88,7 @@ Spring Boot Developer Tools.
 
 ## _H2 Database Engine_
 
-H2 Database Engine.
+H2 is a relational database management system written in Java. It can be embedded in Java applications or run in client-server mode.
 
 ```xml
 <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
@@ -102,6 +102,7 @@ H2 Database Engine.
 ## _Spring Boot Test Starter_
 
 Starter for testing Spring Boot applications with libraries including JUnit, Hamcrest and Mockito.
+It is possible to create both in-memory tables.
 
 ```xml
 <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
@@ -127,7 +128,6 @@ JUnit is a regression testing framework written by Erich Gamma and Kent Beck. It
 ``` 
 
 # _Database_
-
 
 
 # _Bean_
