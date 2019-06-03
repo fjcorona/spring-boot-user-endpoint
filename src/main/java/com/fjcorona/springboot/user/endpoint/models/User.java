@@ -13,19 +13,19 @@ public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "usr_id")
+	@Column(name = "usr_id", nullable = false)
 	private Integer id;
 
-	@Column(name = "usr_name")
+	@Column(name = "usr_name", nullable = false)
 	private String name;
 
-	@Column(name = "usr_lastname")
+	@Column(name = "usr_lastname", nullable = false)
 	private String lastname;
 
-	@Column(name = "usr_age")
+	@Column(name = "usr_age", nullable = false)
 	private Integer age;
 
-	@Column(name = "usr_active")
+	@Column(name = "usr_active", nullable = false)
 	private Integer active;
 
 	public User() {
