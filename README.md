@@ -1,7 +1,7 @@
 # _Menu_
 
 * [Introduction](#introduction)
-* [Port](#port)
+* [Application Properties](#application-properties)
 * [Dependencies](#dependencies)
 	* [Spring Boot Data JPA Starter](#spring-boot-data-jpa-starter)
 	* [Spring Boot Web Starter](#spring-boot-web-starter)
@@ -31,7 +31,7 @@ This project is especially focused on beginners, for all those who just want to 
 
 Here you will find a small example in which you will be able to perform CRUD oepraciones for users, as well as activate and deactivate them. All this in a very isolated way to a graphical interface, the way it will be done through endpoints that rest requests, which can be consumed from Postman or any other client that has the capacity to consume them.
 
-# _Port_
+# _Application Properties_
 
 When we are working with Spring Boot, the default port in which our application runs is ___8080___. In case this we want to change this default port, we have to take in account the [_application.properties_](src/main/resources/application.properties) file, here we can made some important configurations.
 
