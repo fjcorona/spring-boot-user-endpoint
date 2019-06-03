@@ -1,4 +1,4 @@
-package com.fjcorona.springboot.user.endpoint.springbootuserendpoint;
+package com.fjcorona.springboot.user.endpoint.springboot.user.endpoint;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
