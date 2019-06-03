@@ -2,6 +2,10 @@
 
 * [_Introduction_](#introduction)
 * [_Application Properties_](#application-properties)
+	* [_Application Name_](#application-name) 
+	* [_Port_](#port)
+	* [_JPA Show SQL_](#jpa-show-sql)
+	* [_JPA Format SQL_](#jpa-format-sql)
 * [_Dependencies_](#dependencies)
 	* [_Spring Boot Data JPA Starter_](#spring-boot-data-jpa-starter)
 	* [_Spring Boot Web Starter_](#spring-boot-web-starter)
@@ -32,17 +36,53 @@ Here you will find a small example in which you will be able to perform CRUD oep
 
 # _Application Properties_
 
-When we are working with Spring Boot, the default port in which our application runs is ___8080___. In case this we want to change this default port, we have to take in account the [_application.properties_](src/main/resources/application.properties) file, here we can made some important configurations.
+When we are working with Spring Boot, we have an [_application.properties_](src/main/resources/application.properties) file, here we can make some important configurations. There are some configurations which Spring Boot understand by default, but there are another ones that we have to explicity set in the file.
+
+For this project wi will set just four properties.
+
+## _Application Name_
+
+The variable `spring.application.nameset` the application name and indicates the name of the file in the GIT repository where the settings were sought.
+
+This is the wey to set the property at file:
 
 ```properties
 spring.application.name=user-endpoint-service
-server.port=8888
-spring.jpa.show-sql=true
-spring.jpa.properties.hibernate.format_sql=true
 ```
+
+## _Port_
+
+The default port in which a Spring Boot application runs is ___8080___. In the case we want to change this default port, we have to set `server.port` variable: 
+
+```properties
+server.port=8888
+```
+
 I've selected the ___8888___ port, this way, my microservice will run in the next urL:
 
 [_http://localhost:8888_](http://localhost:8888)
+
+## _JPA Show SQL_
+
+When the project is executed, there is a log, in which the errors are shown as well as some relevant information about our application. Thanks to the property `spring.jpa.show-sql` we have the possibility to see the queries related to our temporary database.
+
+```properties
+spring.jpa.show-sql=true
+```
+
+We just set the property as true, if we don't set this property, by default is false and no query is going to be shown. Later we will see some examples
+
+## _JPA Format SQL_
+
+This property works complemtaria, with the previous property, because although, the previous property shows the cpnsultas, it does not make a nice format. That's where `spring.jpa.properties.hibernate.format_sql` comes into action to achieve that goal.
+
+```properties
+spring.jpa.properties.hibernate.format_sql=true
+```
+
+In the same way, this property by default is false, so we have to set as true.
+
+Later we will see some examples of both properties working together.
 
 # _Dependencies_
 
