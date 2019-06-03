@@ -3,6 +3,12 @@
 * [Introduction](#introduction)
 * [Port](#port)
 * [Dependencies](#dependencies)
+	* [Spring Boot Data JPA Starter](#spring-boot-data-jpa-starter)
+	* [Spring Boot Web Starter](#spring-boot-web-starter)
+	* [Spring Boot Developer Tools](#spring-boot-developer-tools)
+	* [H2 Database Engine](#h2-database-engine)
+	* [Spring Boot Test Starter](#spring-boot-test-starter)
+	* [JUnit] (#junit)
 * [Database](#database)
 * [Bean](#bean)
 * [Repository](#repository)
@@ -45,9 +51,87 @@ I've selected the ___8888___ port, this way, my microservice will run in the nex
 
 # _Dependencies_
 
-This projects has been
+As we can see at the structe, this project has been made under maven. That's why we need to add some dependencies to perform.
+
+We can find those dependencies at [_pom.xml_](pom.xml)
 
 [![go up](pictures/go-up.png)](#menu)
+
+## _Spring Boot Data JPA Starter_
+
+```xml
+<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+```
+
+[![go up](pictures/go-up.png)](#menu)
+
+## _Spring Boot Web Starter_
+
+```xml
+<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+```
+
+[![go up](pictures/go-up.png)](#menu)
+
+## _Spring Boot Developer Tools_
+
+```xml
+<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools -->
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-devtools</artifactId>
+	<scope>runtime</scope>
+</dependency>
+```
+
+[![go up](pictures/go-up.png)](#menu))
+
+## _H2 Database Engine_
+
+```xml
+<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+<dependency>
+	<groupId>com.h2database</groupId>
+	<artifactId>h2</artifactId>
+	<scope>runtime</scope>
+</dependency>
+```
+
+[![go up](pictures/go-up.png)](#menu)
+
+## _Spring Boot Test Starter_
+
+```xml
+<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-test</artifactId>
+	<scope>test</scope>
+</dependency>
+```
+
+[![go up](pictures/go-up.png)](#menu)
+
+## _JUnit_
+
+```xml
+<!-- https://mvnrepository.com/artifact/junit/junit -->
+<dependency>
+	<groupId>junit</groupId>
+	<artifactId>junit</artifactId>
+	<version>4.12</version>
+	<scope>test</scope>
+</dependency>
+``` 
+
 
 # _Database_
 
