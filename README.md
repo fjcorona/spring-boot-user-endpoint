@@ -25,6 +25,18 @@ In this project you will find a small example with Spring Boot in which you will
 
 # Port
 
+When we are working with Spring Boot, the default port in which our application runs is ___8080___. In case this we want to change this default port, we have to take in account the [application.properties](src/main/resources/application.properties) file, here we can made some important configurations.
+
+![application.properties](pictures/properties.png)
+
+```properties
+spring.application.name=user-endpoint-service
+server.port=8888
+```
+I've selected the ___8888___ port, this way, my microservice will run in the next urL:
+
+[http://localhost:8888](http://localhost:8888)
+
 # Dependencies
 
 # Database
