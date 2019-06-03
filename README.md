@@ -27,7 +27,7 @@ In this project you will find a small example with Spring Boot in which you will
 
 # Port
 
-When we are working with Spring Boot, the default port in which our application runs is ___8080___. In case this we want to change this default port, we have to take in account the [application.properties](src/main/resources/application.properties) file, here we can made some important configurations.
+When we are working with Spring Boot, the default port in which our application runs is ___8080___. In case this we want to change this default port, we have to take in account the [_application.properties_](src/main/resources/application.properties) file, here we can made some important configurations.
 
 ![application.properties](pictures/port/properties.png)
 
@@ -37,7 +37,7 @@ server.port=8888
 ```
 I've selected the ___8888___ port, this way, my microservice will run in the next urL:
 
-[http://localhost:8888](http://localhost:8888)
+[_http://localhost:8888_](http://localhost:8888)
 
 [![go up](pictures/go-up.png)](#menu)
 
