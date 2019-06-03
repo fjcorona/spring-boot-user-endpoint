@@ -59,6 +59,8 @@ We can find those dependencies at [_pom.xml_](pom.xml)
 
 ## _Spring Boot Data JPA Starter_
 
+Starter for using Spring Data JPA with Hibernate.
+
 ```xml
 <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
 <dependency>
@@ -71,6 +73,8 @@ We can find those dependencies at [_pom.xml_](pom.xml)
 
 ## _Spring Boot Web Starter_
 
+Starter for building web, including RESTful, applications using Spring MVC. Uses Tomcat as the default embedded container.
+
 ```xml
 <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
 <dependency>
@@ -82,6 +86,8 @@ We can find those dependencies at [_pom.xml_](pom.xml)
 [![go up](pictures/go-up.png)](#menu)
 
 ## _Spring Boot Developer Tools_
+
+Spring Boot Developer Tools.
 
 ```xml
 <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools -->
@@ -96,6 +102,8 @@ We can find those dependencies at [_pom.xml_](pom.xml)
 
 ## _H2 Database Engine_
 
+H2 Database Engine.
+
 ```xml
 <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
 <dependency>
@@ -109,6 +117,8 @@ We can find those dependencies at [_pom.xml_](pom.xml)
 
 ## _Spring Boot Test Starter_
 
+Starter for testing Spring Boot applications with libraries including JUnit, Hamcrest and Mockito.
+
 ```xml
 <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
 <dependency>
@@ -121,6 +131,8 @@ We can find those dependencies at [_pom.xml_](pom.xml)
 [![go up](pictures/go-up.png)](#menu)
 
 ## _JUnit_
+
+JUnit is a regression testing framework written by Erich Gamma and Kent Beck. It is used by the developer who implements unit tests in Java.
 
 ```xml
 <!-- https://mvnrepository.com/artifact/junit/junit -->
