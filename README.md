@@ -37,6 +37,8 @@ When we are working with Spring Boot, the default port in which our application 
 
 ```properties
 spring.application.name=user-endpoint-service
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
 server.port=8888
 ```
 I've selected the ___8888___ port, this way, my microservice will run in the next urL:
