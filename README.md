@@ -1,4 +1,4 @@
-# Menu
+# _Menu_
 
 * [Introduction](#introduction)
 * [Port](#port)
@@ -19,7 +19,7 @@
 * [Postman](#postman)
 
 
-# Introduction
+# _Introduction_
 
 This project is especially focused on beginners, for all those who just want to know a quick and simple way to create microservices in spring boot.
 
@@ -27,7 +27,7 @@ Here you will find a small example in which you will be able to perform CRUD oep
 
 [![go up](pictures/go-up.png)](#menu)
 
-# Port
+# _Port_
 
 When we are working with Spring Boot, the default port in which our application runs is ___8080___. In case this we want to change this default port, we have to take in account the [_application.properties_](src/main/resources/application.properties) file, here we can made some important configurations.
 
@@ -43,64 +43,64 @@ I've selected the ___8888___ port, this way, my microservice will run in the nex
 
 [![go up](pictures/go-up.png)](#menu)
 
-# Dependencies
+# _Dependencies_
 
 This projects has been
 
 [![go up](pictures/go-up.png)](#menu)
 
-# Database
+# _Database_
 
 [![go up](pictures/go-up.png)](#menu)
 
-# Bean
+# _Bean_
 
 [![go up](pictures/go-up.png)](#menu)
 
-# Repository
+# _Repository_
 
 [![go up](pictures/go-up.png)](#menu)
 
-# User Controller
+# _User Controller_
 
 [![go up](pictures/go-up.png)](#menu)
 
-## Create User
+## _Create User_
 
 [![go up](pictures/go-up.png)](#menu)
 
-## Get All Users
+## _Get All Users_
 
 [![go up](pictures/go-up.png)](#menu)
 
-## Get User By Id
+## _Get User By Id_
 
 [![go up](pictures/go-up.png)](#menu)
 
-## Get All Active Users
+## _Get All Active Users_
 
 [![go up](pictures/go-up.png)](#menu)
 
-## Get Active User By Id
+## _Get Active User By Id_
 
 [![go up](pictures/go-up.png)](#menu)
 
-## Update User
+## _Update User_
 
 [![go up](pictures/go-up.png)](#menu)
 
-## Delete User
+## _Delete User_
 
 [![go up](pictures/go-up.png)](#menu)
 
-## Activate User
+## _Activate User_
 
 [![go up](pictures/go-up.png)](#menu)
 
-## Deactivate User
+## _Deactivate User_
 
 [![go up](pictures/go-up.png)](#menu)
 
-# Postman
+# _Postman_
 
 [![go up](pictures/go-up.png)](#menu)
