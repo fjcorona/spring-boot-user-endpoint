@@ -39,7 +39,7 @@ This project is especially focused on beginners, for all those who just want to 
 
 Here you will find a small example in which you will be able to perform CRUD oepraciones for users, as well as activate and deactivate them. All this in a very isolated way to a graphical interface, the way it will be done through endpoints with REST requests, which can be consumed From any application or client that has the capacity to consume them. We will test the endpoints with Postman.
 
-![go-up](pictures/go-up.png)
+[![go-up](pictures/go-up.png)](#menu)
 
 # _Application Properties_
 
@@ -47,7 +47,7 @@ When we are working with Spring Boot, we have an [_application.properties_](src/
 
 For this project we will set just four properties.
 
-![go-up](pictures/go-up.png)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Application Name_
 
@@ -59,7 +59,7 @@ This is the way to set the property at file:
 spring.application.name=user-endpoint-service
 ```
 
-![go-up](pictures/go-up.png)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Port_
 
@@ -73,7 +73,7 @@ I've selected the ___8888___ port, this way, my microservice will run in the nex
 
 [_http://localhost:8888_](http://localhost:8888)
 
-![go-up](pictures/go-up.png)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _JPA Show SQL_
 
@@ -85,7 +85,7 @@ spring.jpa.show-sql=true
 
 We just set the property as true, if we don't set this property, by default is false and no query is going to be shown. Later we will see some examples.
 
-![go-up](pictures/go-up.png)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _JPA Format SQL_
 
@@ -99,7 +99,7 @@ In the same way, this property by default is false, so we have to set as true.
 
 Later we will see some examples of both properties working together.
 
-![go-up](pictures/go-up.png)
+[![go-up](pictures/go-up.png)](#menu)
 
 # _Dependencies_
 
@@ -107,7 +107,7 @@ As we can see at the structure, this project has been made under maven. That's w
 
 We can find those dependencies at [_pom.xml_](pom.xml)
 
-![go-up](pictures/go-up.png)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Spring Boot Web Starter_
 
@@ -121,7 +121,7 @@ Starter for building web, including RESTful, applications using Spring MVC. Uses
 </dependency>
 ```
 
-![go-up](pictures/go-up.png)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Spring Boot Developer Tools_
 
@@ -136,7 +136,7 @@ Spring Boot includes an additional set of tools that can make the application de
 </dependency>
 ```
 
-![go-up](pictures/go-up.png)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Spring Boot Data JPA Starter_
 
@@ -150,7 +150,7 @@ Spring Boot Starters are a set of convenient dependency descriptors that you can
 </dependency>
 ```
 
-![go-up](pictures/go-up.png)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _H2 Database Engine_
 
@@ -166,7 +166,7 @@ It is possible to create both in-memory tables.
 </dependency>
 ```
 
-![go-up](pictures/go-up.png)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Spring Boot Test Starter_
 
@@ -181,7 +181,7 @@ Starter for testing Spring Boot applications with libraries including JUnit, Ham
 </dependency>
 ```
 
-![go-up](pictures/go-up.png)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _JUnit_
 
@@ -197,7 +197,7 @@ JUnit is a regression testing framework written by Erich Gamma and Kent Beck. It
 </dependency>
 ```
 
-![go-up](pictures/go-up.png)
+[![go-up](pictures/go-up.png)](#menu)
 
 # _Database_
 
@@ -205,7 +205,7 @@ As it was mentioned before ___H2 Engine___ is the _RDBMS_ we will use to persist
 
 We make the assumption we are working with JPA.
 
-![go-up](pictures/go-up.png)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Database Feeding_
 
@@ -238,7 +238,7 @@ INSERT INTO users (usr_id, usr_name, usr_lastname, usr_age, usr_active)
 VALUES (10010, 'Serafino', 'Arriaga', 44, 1);
 ```
 
-![go-up](pictures/go-up.png)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _CREATE Query_
 
@@ -265,7 +265,7 @@ Remember we can see it due to `spring.jpa.show-sql` and `spring.jpa.show-sql` ha
 As it was mentioned, data types are made according to the values they are feed wit. We can observe too that `VARCHAR` fields get by default 255 length.
 The definition of the files as `NOT NULL` or `PRIMARY KEY`are not from the SQL file, but there are from the abbotations in the been, as we will see in the nest section.
 
-![go-up](pictures/go-up.png)
+[![go-up](pictures/go-up.png)](#menu)
 
 # _Bean_
 
@@ -316,7 +316,7 @@ public class User {
 }
 ```
 
-![go-up](pictures/go-up.png)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Entity_
 
@@ -331,7 +331,7 @@ public class User {
 
 This way ___User___ class knows that is mapped with ***users*** table.
 
-![go-up](pictures/go-up.png)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Column_
 
@@ -348,7 +348,7 @@ You might think that the best would be for the table to have the same name as th
 
 For this annotation there is another point that I would like to emphasize, you can see that in addition to name, another parameter `nullable = false` is being sent, this is what results in the fields of our temporary table being created as `NOT NULL`.
 
-![go-up](pictures/go-up.png)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Primary Key_
 
@@ -370,7 +370,7 @@ An they both are the reason osf the primary key in create quey we've seen before
 
 Something we have to consider and never forget is that the `@Entity` annotation, together with `@Id` annotation is the minimum we need in order to create an entity.
 
-![go-up](pictures/go-up.png)
+[![go-up](pictures/go-up.png)](#menu)
 
 # _Repository_
 
