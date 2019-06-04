@@ -21,6 +21,12 @@
 	* [_Column_](#column)
 	* [_Primary Key_](#primary-key)
 * [_Repository_](#repository)
+	* [_findAll_](#findall)
+	* [_findById_](#findbyid)
+	* [_findByActive_](#findbyactive)
+	* [_findByActiveAndId_](#findbyactiveandid)
+	* [_save_](#save)
+	* [_deleteById_](#deletebyid)
 * [_User Controller_](#user-controller)
 	* [_Create User_](#create-user)
 	* [_Get All Users_](#get-all-users)
@@ -410,8 +416,28 @@ When we make `JpaRepository<User, Integer>` we indicate that ___JPARepository___
 
 By extending JpaRepository we get at a bunch of generic CRUD methods into our type that allows saving Users, deleting them and so on.
 
-# _User Controller_
+## _findAll_
 
+
+## _findById_
+
+
+## _findById_
+
+
+## _findByActive_
+
+
+## _findByActiveAndId_
+
+
+## _deleteById_
+
+
+## _save_
+
+
+# _User Controller_
 
 
 ## _Create User_
