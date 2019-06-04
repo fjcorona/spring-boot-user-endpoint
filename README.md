@@ -38,7 +38,7 @@ Here you will find a small example in which you will be able to perform CRUD oep
 
 When we are working with Spring Boot, we have an [_application.properties_](src/main/resources/application.properties) file, here we can make some important configurations. There are some configurations which Spring Boot understand by default, but there are another ones that we have to explicity set in the file.
 
-For this project wi will set just four properties.
+For this project we will set just four properties.
 
 ## _Application Name_
 
