@@ -238,6 +238,15 @@ INSERT INTO users (usr_id, usr_name, usr_lastname, usr_age, usr_active)
 VALUES (10010, 'Serafino', 'Arriaga', 44, 1);
 ```
 
+I want to mention a particular field in the table, I'm talking about ***usr_active***, its purpose is to work as a kind of Boolean value, where:
+
+|Numeric Value|Boolean Value|Meaning|
+|:----:|:----:|:----:|
+|0|False|Inactive
+|1|True|Active
+
+It must be remembered that in addition to CRUD performance, operations will be implemented to deactivate users, without the need to eliminate them, as well as to reactivate them.
+
 [![go-up](pictures/go-up.png)](#menu)
 
 ## _CREATE Query_
