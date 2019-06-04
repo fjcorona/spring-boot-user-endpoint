@@ -18,7 +18,7 @@
 	* [_CREATE Query_](#create-query)
 * [_Bean_](#bean)
 	* [_Entity_](#entity) 
-	* [_Column](#column)
+	* [_Column_](#column)
 	* [_Primary Key_](#primary-key)
 * [_Repository_](#repository)
 * [_User Controller_](#user-controller)
