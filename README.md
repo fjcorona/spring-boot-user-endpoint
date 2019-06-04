@@ -17,6 +17,9 @@
 	* [_Database Feeding_](#database-feeding)
 	* [_CREATE Query_](#create-query)
 * [_Bean_](#bean)
+	* [_Entity_](#entity) 
+	* [_Column](#column)
+	* [_Primary Key_](#primary-key)
 * [_Repository_](#repository)
 * [_User Controller_](#user-controller)
 	* [_Create User_](#create-user)
@@ -234,6 +237,11 @@ The definition of the files as `NOT NULL` or `PRIMARY KEY`are not from the SQL f
 
 # _Bean_
 
+Now we need a Bean, I mean, a Java class which will be mapped with the database `users` table. So well need such class with the same or similar name than the table, and properties related with the fields of the table. Of course we need a property by each field, with the same data types, and the same or similar name.
+
+Besides that, the class has to have the getters and setters methods. They are not included in the below definition of code. But you can find the complete code in [_User.java_](src/main/java/com/fjcorona/springboot/user/endpoint/models/User.java) file.
+
+In this bean we use some annotations form `javax.persistence`package.
 
 ```java
 package com.fjcorona.springboot.user.endpoint.models;
@@ -274,8 +282,55 @@ public class User {
 	 * /
 
 }
-
 ```
+
+## _Entity_
+
+`@Entity` annotation defines that a class can be mapped to a table. Table name is derived from entity class name, it means that, for example, in this case due to the name ___User___ of the clase, JPA automatically would try to match with a ***user*** table, but our table is called _**users**_, in plural, in this case we have to explicity indicate to the class, which table has to map, this is possible through `@Table` annotation:
+
+```java
+@Table(name = "users")
+public class User {
+	// Code here
+}
+```
+
+This way ___User___ class knows that is mapped with ***users*** table. 
+
+## _Column_
+
+In the same way table's columns are derived from entities properties, so by default JPA will look for the names of your properties as fields of the table you indicate the Entity it is. As you can see, in the database the fields names has an **usr_** prefix that the class properties don't have, son we need the `@Column` annotation to explicity indicate property by property which field tables will be linked with.
+
+```java
+@Column(name = "usr_name", nullable = false)
+private String name;
+```
+
+This way, ___name___ property knows that is mapped with ***usr_name*** field. And so for each _property/field_ pair.
+
+You might think that the best would be for the table to have the same name as the class and that the fields should also have the same name as the properties and thus avoid these two optional annotations in our code. And maybe that is the best solution, but the difference of names has been made purposely for didactic purposes.
+
+For this annotation there is another point that I would like to emphasize, you can see that in addition to name, another parameter `nullable = false` is being sent, this is what results in the fields of our temporary table being created as `NOT NULL`.
+
+## _Primary Key_
+
+The `@Id` annotation is inherited from javax.persistence.Id indicating the member field below is the ___primary key___ of current entity.
+
+The `@GeneratedValue` annotation is to configure the way of increment of the specified ___primary key___.
+
+The `GenerationType.IDENTITY` is the easiest strategy to use. It relies on an auto-incremented database column and lets the database generate a new value with each insert operation.
+
+This both annotations together, will supplies us with and ___id___ autoincremental primary key:
+
+```java
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+@Column(name = "usr_id", nullable = false)
+private Integer id;
+```
+An they both are the reason osf the primary key in create quey we've seen before.
+
+Something we have to consider and never forget is that the `@Entity` annotation, together with `@Id` annotation is the minimum we need in order to create an entity.
 
 # _Repository_
 
