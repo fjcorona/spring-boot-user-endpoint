@@ -39,11 +39,15 @@ This project is especially focused on beginners, for all those who just want to 
 
 Here you will find a small example in which you will be able to perform CRUD oepraciones for users, as well as activate and deactivate them. All this in a very isolated way to a graphical interface, the way it will be done through endpoints with REST requests, which can be consumed From any application or client that has the capacity to consume them. We will test the endpoints with Postman.
 
+![go-up](pictures/go-up.png)
+
 # _Application Properties_
 
 When we are working with Spring Boot, we have an [_application.properties_](src/main/resources/application.properties) file, here we can make some important configurations. There are some configurations which Spring Boot understand by default, but there are another ones that we have to explicity set in the file.
 
 For this project we will set just four properties.
+
+![go-up](pictures/go-up.png)
 
 ## _Application Name_
 
@@ -54,6 +58,8 @@ This is the way to set the property at file:
 ```properties
 spring.application.name=user-endpoint-service
 ```
+
+![go-up](pictures/go-up.png)
 
 ## _Port_
 
@@ -67,6 +73,8 @@ I've selected the ___8888___ port, this way, my microservice will run in the nex
 
 [_http://localhost:8888_](http://localhost:8888)
 
+![go-up](pictures/go-up.png)
+
 ## _JPA Show SQL_
 
 When the project is executed, there is a log, in which the errors are shown as well as some relevant information about our application. Thanks to the property `spring.jpa.show-sql` we have the possibility to see the queries related to our temporary database.
@@ -75,7 +83,9 @@ When the project is executed, there is a log, in which the errors are shown as w
 spring.jpa.show-sql=true
 ```
 
-We just set the property as true, if we don't set this property, by default is false and no query is going to be shown. Later we will see some examples
+We just set the property as true, if we don't set this property, by default is false and no query is going to be shown. Later we will see some examples.
+
+![go-up](pictures/go-up.png)
 
 ## _JPA Format SQL_
 
@@ -89,11 +99,15 @@ In the same way, this property by default is false, so we have to set as true.
 
 Later we will see some examples of both properties working together.
 
+![go-up](pictures/go-up.png)
+
 # _Dependencies_
 
 As we can see at the structure, this project has been made under maven. That's why we need to add some dependencies to perform.
 
 We can find those dependencies at [_pom.xml_](pom.xml)
+
+![go-up](pictures/go-up.png)
 
 ## _Spring Boot Web Starter_
 
@@ -106,6 +120,8 @@ Starter for building web, including RESTful, applications using Spring MVC. Uses
 	<artifactId>spring-boot-starter-web</artifactId>
 </dependency>
 ```
+
+![go-up](pictures/go-up.png)
 
 ## _Spring Boot Developer Tools_
 
@@ -120,6 +136,8 @@ Spring Boot includes an additional set of tools that can make the application de
 </dependency>
 ```
 
+![go-up](pictures/go-up.png)
+
 ## _Spring Boot Data JPA Starter_
 
 Spring Boot Starters are a set of convenient dependency descriptors that you can include in your application. You get a one-stop-shop for all the Spring and related technology that you need without having to hunt through sample code and copy paste loads of dependency descriptors. For example, if you want to get started using Spring and JPA for database access just include the spring-boot-starter-data-jpa dependency in your project, and you are good to go.
@@ -131,6 +149,8 @@ Spring Boot Starters are a set of convenient dependency descriptors that you can
 	<artifactId>spring-boot-starter-data-jpa</artifactId>
 </dependency>
 ```
+
+![go-up](pictures/go-up.png)
 
 ## _H2 Database Engine_
 
@@ -146,6 +166,8 @@ It is possible to create both in-memory tables.
 </dependency>
 ```
 
+![go-up](pictures/go-up.png)
+
 ## _Spring Boot Test Starter_
 
 Starter for testing Spring Boot applications with libraries including JUnit, Hamcrest and Mockito.
@@ -159,6 +181,8 @@ Starter for testing Spring Boot applications with libraries including JUnit, Ham
 </dependency>
 ```
 
+![go-up](pictures/go-up.png)
+
 ## _JUnit_
 
 JUnit is a regression testing framework written by Erich Gamma and Kent Beck. It is used by the developer who implements unit tests in Java. For the moment we will not be focused in testing.
@@ -171,13 +195,17 @@ JUnit is a regression testing framework written by Erich Gamma and Kent Beck. It
 	<version>4.12</version>
 	<scope>test</scope>
 </dependency>
-``` 
+```
+
+![go-up](pictures/go-up.png)
 
 # _Database_
 
 As it was mentioned before ___H2 Engine___ is the _RDBMS_ we will use to persist our information. Due to it supplies us with the advantaje to make in-memory tables. It means that we don't really need to install nothing because we will have a Runtime database, which will be deleted once the execution of the application finishes. What doesn't mean a problem for learning effects. You should easily change H2 for annother database management such as ***MySQL*** or ***PostgreSQL***.
 
 We make the assumption we are working with JPA.
+
+![go-up](pictures/go-up.png)
 
 ## _Database Feeding_
 
@@ -210,6 +238,8 @@ INSERT INTO users (usr_id, usr_name, usr_lastname, usr_age, usr_active)
 VALUES (10010, 'Serafino', 'Arriaga', 44, 1);
 ```
 
+![go-up](pictures/go-up.png)
+
 ## _CREATE Query_
 
 Once the application is executed, the SQL file before fed, is read, and according to the names and values ​​given in the `INSERT` queries, a ___users___ table is created with the fields and their respective data types. The next `CREATE` query is internally exectuted:
@@ -234,6 +264,8 @@ Remember we can see it due to `spring.jpa.show-sql` and `spring.jpa.show-sql` ha
 
 As it was mentioned, data types are made according to the values they are feed wit. We can observe too that `VARCHAR` fields get by default 255 length.
 The definition of the files as `NOT NULL` or `PRIMARY KEY`are not from the SQL file, but there are from the abbotations in the been, as we will see in the nest section.
+
+![go-up](pictures/go-up.png)
 
 # _Bean_
 
@@ -284,6 +316,8 @@ public class User {
 }
 ```
 
+![go-up](pictures/go-up.png)
+
 ## _Entity_
 
 `@Entity` annotation defines that a class can be mapped to a table. Table name is derived from entity class name, it means that, for example, in this case due to the name ___User___ of the clase, JPA automatically would try to match with a ***user*** table, but our table is called _**users**_, in plural, in this case we have to explicity indicate to the class, which table has to map, this is possible through `@Table` annotation:
@@ -295,7 +329,9 @@ public class User {
 }
 ```
 
-This way ___User___ class knows that is mapped with ***users*** table. 
+This way ___User___ class knows that is mapped with ***users*** table.
+
+![go-up](pictures/go-up.png)
 
 ## _Column_
 
@@ -311,6 +347,8 @@ This way, ___name___ property knows that is mapped with ***usr_name*** field. An
 You might think that the best would be for the table to have the same name as the class and that the fields should also have the same name as the properties and thus avoid these two optional annotations in our code. And maybe that is the best solution, but the difference of names has been made purposely for didactic purposes.
 
 For this annotation there is another point that I would like to emphasize, you can see that in addition to name, another parameter `nullable = false` is being sent, this is what results in the fields of our temporary table being created as `NOT NULL`.
+
+![go-up](pictures/go-up.png)
 
 ## _Primary Key_
 
@@ -331,6 +369,8 @@ private Integer id;
 An they both are the reason osf the primary key in create quey we've seen before.
 
 Something we have to consider and never forget is that the `@Entity` annotation, together with `@Id` annotation is the minimum we need in order to create an entity.
+
+![go-up](pictures/go-up.png)
 
 # _Repository_
 
