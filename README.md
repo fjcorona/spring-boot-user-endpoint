@@ -416,6 +416,8 @@ When we make `JpaRepository<User, Integer>` we indicate that ___JPARepository___
 
 By extending JpaRepository we get at a bunch of generic CRUD methods into our type that allows saving Users, deleting them and so on.
 
+[![go-up](pictures/go-up.png)](#menu)
+
 ## _findAll_
 
 
