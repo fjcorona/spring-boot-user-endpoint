@@ -104,7 +104,7 @@ Starter for building web, including RESTful, applications using Spring MVC. Uses
 
 ## _Spring Boot Developer Tools_
 
-Spring Boot Developer Tools.
+Spring Boot includes an additional set of tools that can make the application development experience a little more pleasant. The spring-boot-devtools module can be included in any project to provide additional development-time features.
 
 ```xml
 <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools -->
@@ -117,7 +117,7 @@ Spring Boot Developer Tools.
 
 ## _Spring Boot Data JPA Starter_
 
-Starter for using Spring Data JPA with Hibernate.
+Spring Boot Starters are a set of convenient dependency descriptors that you can include in your application. You get a one-stop-shop for all the Spring and related technology that you need without having to hunt through sample code and copy paste loads of dependency descriptors. For example, if you want to get started using Spring and JPA for database access just include the spring-boot-starter-data-jpa dependency in your project, and you are good to go.
 
 ```xml
 <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
@@ -156,7 +156,7 @@ Starter for testing Spring Boot applications with libraries including JUnit, Ham
 
 ## _JUnit_
 
-JUnit is a regression testing framework written by Erich Gamma and Kent Beck. It is used by the developer who implements unit tests in Java.
+JUnit is a regression testing framework written by Erich Gamma and Kent Beck. It is used by the developer who implements unit tests in Java. For the moment we will not be focused in testing.
 
 ```xml
 <!-- https://mvnrepository.com/artifact/junit/junit -->
