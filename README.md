@@ -406,7 +406,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
 Spring Data JPA provides a repository programming model that starts with an interface per managed domain object.
 
-When we make `JpaRepository<User, Integer>` we indicate that ___JPARepository___ will work with entities of ***User*** type, whose id is ___Integer___ type.
+When we make `JpaRepository<User, Integer>` we indicate that ___JPARepository___ will work with entities of ***User*** type, whose id is *__Integer__* type.
 
 By extending JpaRepository we get at a bunch of generic CRUD methods into our type that allows saving Users, deleting them and so on.
 
