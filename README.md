@@ -383,7 +383,32 @@ Something we have to consider and never forget is that the `@Entity` annotation,
 
 # _Repository_
 
+We have this implementation in [_UserRepository.java_](src/main/java/com/fjcorona/springboot/user/endpoint/repositories/UserRepository.java) file.
 
+```java
+package com.fjcorona.springboot.user.endpoint.repositories;
+
+import java.util.List;
+import java.util.Optional;
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.fjcorona.springboot.user.endpoint.models.User;
+
+public interface UserRepository extends JpaRepository<User, Integer> {
+	List<User> findAll();
+	Optional<User> findById(Integer id);
+	public List<User> findByActive(Integer active);
+	Optional<User> findByActiveAndId(Integer active, Integer id);
+	@SuppressWarnings("unchecked")
+	User save(User user);
+	void deleteById(Integer id);
+}
+```
+
+Spring Data JPA provides a repository programming model that starts with an interface per managed domain object.
+
+When we make `JpaRepository<User, Integer>` we indicate that ___JPARepository___ will work with entities of ***User*** type, whose id is ___Integer___ type.
+
+By extending JpaRepository we get at a bunch of generic CRUD methods into our type that allows saving Users, deleting them and so on.
 
 # _User Controller_
 
