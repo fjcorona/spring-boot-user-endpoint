@@ -7,9 +7,9 @@
 	* [_JPA Show SQL_](#jpa-show-sql)
 	* [_JPA Format SQL_](#jpa-format-sql)
 * [_Dependencies_](#dependencies)
-	* [_Spring Boot Data JPA Starter_](#spring-boot-data-jpa-starter)
 	* [_Spring Boot Web Starter_](#spring-boot-web-starter)
 	* [_Spring Boot Developer Tools_](#spring-boot-developer-tools)
+	* [_Spring Boot Data JPA Starter_](#spring-boot-data-jpa-starter)
 	* [_H2 Database Engine_](#h2-database-engine)
 	* [_Spring Boot Test Starter_](#spring-boot-test-starter)
 	* [_JUnit_](#junit)
@@ -44,7 +44,7 @@ For this project we will set just four properties.
 
 The variable `spring.application.name` set the application name and indicates the name of the file in the GIT repository where the settings were sought.
 
-This is the wey to set the property at file:
+This is the way to set the property at file:
 
 ```properties
 spring.application.name=user-endpoint-service
@@ -58,7 +58,7 @@ The default port in which a Spring Boot application runs is ___8080___. In the c
 server.port=8888
 ```
 
-I've selected the ___8888___ port, this way, my microservice will run in the next urL:
+I've selected the ___8888___ port, this way, my microservice will run in the next URL:
 
 [_http://localhost:8888_](http://localhost:8888)
 
@@ -74,7 +74,7 @@ We just set the property as true, if we don't set this property, by default is f
 
 ## _JPA Format SQL_
 
-This property works complemtaria, with the previous property, because although, the previous property shows the cpnsultas, it does not make a nice format. That's where `spring.jpa.properties.hibernate.format_sql` comes into action to achieve that goal.
+This property works together with the previous property, because although, the previous property shows the queries, it doesn't make a nice format. That's where `spring.jpa.properties.hibernate.format_sql` comes into action to achieve that goal.
 
 ```properties
 spring.jpa.properties.hibernate.format_sql=true
@@ -86,21 +86,9 @@ Later we will see some examples of both properties working together.
 
 # _Dependencies_
 
-As we can see at the structe, this project has been made under maven. That's why we need to add some dependencies to perform.
+As we can see at the structure, this project has been made under maven. That's why we need to add some dependencies to perform.
 
 We can find those dependencies at [_pom.xml_](pom.xml)
-
-## _Spring Boot Data JPA Starter_
-
-Starter for using Spring Data JPA with Hibernate.
-
-```xml
-<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
-<dependency>
-	<groupId>org.springframework.boot</groupId>
-	<artifactId>spring-boot-starter-data-jpa</artifactId>
-</dependency>
-```
 
 ## _Spring Boot Web Starter_
 
@@ -124,6 +112,18 @@ Spring Boot Developer Tools.
 	<groupId>org.springframework.boot</groupId>
 	<artifactId>spring-boot-devtools</artifactId>
 	<scope>runtime</scope>
+</dependency>
+```
+
+## _Spring Boot Data JPA Starter_
+
+Starter for using Spring Data JPA with Hibernate.
+
+```xml
+<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-data-jpa</artifactId>
 </dependency>
 ```
 
