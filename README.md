@@ -42,7 +42,7 @@ For this project we will set just four properties.
 
 ## _Application Name_
 
-The variable `spring.application.nameset` the application name and indicates the name of the file in the GIT repository where the settings were sought.
+The variable `spring.application.name` set the application name and indicates the name of the file in the GIT repository where the settings were sought.
 
 This is the wey to set the property at file:
 
