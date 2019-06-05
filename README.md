@@ -435,12 +435,51 @@ By extending JpaRepository we get at a bunch of generic CRUD methods into our ty
 
 ## _findAll_
 
+This method gets a List of all available entities in database.
+
+```java
+List<User> findAll();
+```
+
+Remember our ***JPARepository*** was initialized with ___User___ type, so we will get a list of users, wheter they are active or inactive.
+
+It's as if you execute the following sql query:
+
+```sql
+SELECT usr_id id,
+		usr_name name,
+		usr_lastname lastname,
+		usr_age age,
+		usr_active active 
+FROM 
+	users;
+```
+
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _findById_
 
+We expect a single result Entity ___User___ has been specified as a return type.
 
-## _findById_
+```java
+Optional<User> findById(Integer id);
+```
 
+The method internally executes an SQL query similar to the following:
+
+```sql
+SELECT usr_id id,
+		usr_name name,
+		usr_lastname lastname,
+		usr_age age,
+		usr_active active 
+FROM 
+	users;
+WHERE usr_id = ?
+```
+
+Where `?` simbol represents the id owned by the user we are looking for.
+Given that the id is a primary key, that is, a unique value to identify the user, we can be sure that if it exists, we will only obtain one user, otherwise the method will not return any user, that is why the return of the function is an ___Optional___ type.
 
 ## _save_
 
