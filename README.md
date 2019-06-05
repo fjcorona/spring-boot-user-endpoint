@@ -536,6 +536,22 @@ The method will return a ___User___ instance with the updated values.
 
 ## _deleteById_
 
+This method just receives the id owned by the user we want to delete.
+
+```java
+void deleteById(Integer id);
+```
+The next SQL Query is internally executed:
+
+```sql
+DELETE
+	FROM
+		users
+	WHERE
+		usr_id=?
+```
+
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _findByActive_
 
