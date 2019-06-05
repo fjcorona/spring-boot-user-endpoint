@@ -13,10 +13,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{host}}/users",
 							"host": [
@@ -34,10 +30,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{host}}/users/{{id}}",
 							"host": [
@@ -45,49 +37,6 @@
 							],
 							"path": [
 								"users",
-								"{{id}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Active Users",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{host}}/users-active",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"users-active"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Active User By ID",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{host}}/users-active/{{id}}",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"users-active",
 								"{{id}}"
 							]
 						}
@@ -156,10 +105,6 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{host}}/users/{{id}}",
 							"host": [
@@ -167,6 +112,41 @@
 							],
 							"path": [
 								"users",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Active Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users-active",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users-active"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Active User By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users-active/{{id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users-active",
 								"{{id}}"
 							]
 						}
