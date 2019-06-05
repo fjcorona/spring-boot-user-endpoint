@@ -61,7 +61,7 @@ public class UserController {
 		user.setId(id);
 		user.setActive(userOptional.get().getActive());
 
-		repository.save(user);
+		User savedUser = repository.save(user);
 
 		return ResponseEntity.noContent().build();
 	}
