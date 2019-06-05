@@ -59,6 +59,7 @@ public class UserController {
 		}
 
 		user.setId(id);
+		user.setActive(userOptional.get().getActive());
 
 		repository.save(user);
 
