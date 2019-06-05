@@ -43,7 +43,7 @@
 
 This project is especially focused on beginners, for all those who just want to know a quick and simple way to create microservices in spring boot.
 
-Here you will find a small example in which you will be able to perform CRUD oepraciones for users, as well as activate and deactivate them. All this in a very isolated way to a graphical interface, the way it will be done through endpoints with REST requests, which can be consumed From any application or client that has the capacity to consume them. We will test the endpoints with Postman.
+Here is a small example in which you will be able to perform CRUD operations for users, as well as activate and deactivate them. All this in a very isolated way to a graphical interface, the way it will be done through endpoints with REST requests, which can be consumed From any application or client that has the capacity to consume them. We will test the endpoints with Postman.
 
 [![go-up](pictures/go-up.png)](#menu)
 
@@ -277,8 +277,8 @@ Remember we can see it due to `spring.jpa.show-sql` and `spring.jpa.show-sql` ha
 
 ![create-hibernate](pictures/database/create-hibernate.png)
 
-As it was mentioned, data types are made according to the values they are feed wit. We can observe too that `VARCHAR` fields get by default 255 length.
-The definition of the files as `NOT NULL` or `PRIMARY KEY`are not from the SQL file, but there are from the abbotations in the been, as we will see in the nest section.
+As it was mentioned, data types are made according to the values they are feed with. We can observe too that `VARCHAR` fields get by default 255 length.
+The definition of the files as `NOT NULL` or `PRIMARY KEY`are not from the SQL file, but there are from the annotations in the been, as we will see in the next section.
 
 [![go-up](pictures/go-up.png)](#menu)
 
@@ -335,7 +335,7 @@ public class User {
 
 ## _Entity_
 
-`@Entity` annotation defines that a class can be mapped to a table. Table name is derived from entity class name, it means that, for example, in this case due to the name ___User___ of the clase, JPA automatically would try to match with a ***user*** table, but our table is called _**users**_, in plural, in this case we have to explicity indicate to the class, which table has to map, this is possible through `@Table` annotation:
+`@Entity` annotation defines that a class can be mapped to a table. Table name is derived from entity class name, it means that, for example, in this case, due to the name ___User___ of the clase, JPA automatically would try to match with a ***user*** table, but our table is called _**users**_, in plural, in this case we have to explicity indicate to the class, which table has to map, this is possible through `@Table` annotation:
 
 ```java
 @Table(name = "users")
@@ -367,7 +367,7 @@ For this annotation there is another point that I would like to emphasize, you c
 
 ## _Primary Key_
 
-The `@Id` annotation is inherited from javax.persistence.Id indicating the member field below is the ___primary key___ of current entity.
+The `@Id` annotation is inherited from `javax.persistence.Id` indicating the member field below is the ___primary key___ of current entity.
 
 The `@GeneratedValue` annotation is to configure the way of increment of the specified ___primary key___.
 
