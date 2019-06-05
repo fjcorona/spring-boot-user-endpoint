@@ -510,6 +510,8 @@ INTO
 
 The id of the new entity will be automatically assigned, remember is an auto incremetal primary key. And of course, each `?` simbol is related with each property value from the entity.
 
+The method will return a ___User___ instance with the saved values and the generated id.
+
 ### _With NOT NULL id_
 
 When the received ___User___ entity has actually a value in its `id` property. The method will `UPDATE` the entity corresponding to the received id.
@@ -527,6 +529,8 @@ SET
 WHERE
 	usr_id=?
 ```
+
+The method will return a ___User___ instance with the updated values.
 
 [![go-up](pictures/go-up.png)](#menu)
 
