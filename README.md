@@ -447,10 +447,10 @@ It's as if you execute the following sql query:
 
 ```sql
 SELECT usr_id id,
-		usr_name name,
-		usr_lastname lastname,
-		usr_age age,
-		usr_active active 
+	usr_name name,
+	usr_lastname lastname,
+	usr_age age,
+	usr_active active 
 FROM 
 	users;
 ```
@@ -469,13 +469,14 @@ The method internally executes an SQL query similar to the following:
 
 ```sql
 SELECT usr_id id,
-		usr_name name,
-		usr_lastname lastname,
-		usr_age age,
-		usr_active active 
+	usr_name name,
+	usr_lastname lastname,
+	usr_age age,
+	usr_active active 
 FROM 
 	users;
-WHERE usr_id = ?
+WHERE
+	usr_id = ?
 ```
 
 Where `?` simbol represents the id owned by the user we are looking for.
