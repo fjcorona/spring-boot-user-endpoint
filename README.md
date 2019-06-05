@@ -446,7 +446,8 @@ Remember our ***JPARepository*** was initialized with ___User___ type, so we wil
 It's as if you execute the following sql query:
 
 ```sql
-SELECT usr_id id,
+SELECT 
+	usr_id id,
 	usr_name name,
 	usr_lastname lastname,
 	usr_age age,
@@ -468,7 +469,8 @@ Optional<User> findById(Integer id);
 The method internally executes an SQL query similar to the following:
 
 ```sql
-SELECT usr_id id,
+SELECT 
+	usr_id id,
 	usr_name name,
 	usr_lastname lastname,
 	usr_age age,
