@@ -555,6 +555,29 @@ DELETE
 
 ## _findByActive_
 
+JPA provides us with the ability to know what properties our entity has, and from them, our repository can access methods like `findByXx`, where `Xx` represents the name of any of our entity properties.
+
+Taking advantage of this flexibility, we use the `findByActive` method which will bring us a list of all ___User___ instances, active or inactive, depending on the value that the method receives (0 = Active, 1 = Inactive).
+
+```java
+public List<User> findByActive(Integer active);
+```
+Next would be the generic SQL query:
+
+```sql
+SELECT 
+	usr_id id,
+	usr_name name,
+	usr_lastname lastname,
+	usr_age age,
+	usr_active active 
+FROM 
+	users;
+WHERE
+	usr_active=?
+```
+
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _findByActiveAndId_
 
