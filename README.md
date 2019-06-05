@@ -24,6 +24,8 @@
 	* [_findAll_](#findall)
 	* [_findById_](#findbyid)
 	* [_save_](#save)
+		* [_With NULL id_](#with-null-id)
+		* [_With NOT NULL id_](#with-not-null-id)
 	* [_deleteById_](#deletebyid)
 	* [_findByActive_](#findbyactive)
 	* [_findByActiveAndId_](#findbyactiveandid)
@@ -488,6 +490,45 @@ Given that the id is a primary key, that is, a unique value to identify the user
 
 ## _save_
 
+The next method is `save`, as you can see we receive the User entity we want to save.
+
+```java
+User save(User user);
+```
+### _With NULL id_
+
+By default the repository implementation will consider an entity new if its `id` property is `null` in which case, the method internally executes:
+
+```sql
+INSERT
+INTO 
+	users 
+		(usr_id, usr_active, usr_age, usr_lastname, usr_name) 
+	values 
+		(null, ?, ?, ?, ?)
+```
+
+The id of the new entity will be automatically assigned, remember is an auto incremetal primary key. And of course, each `?` simbol is related with each property value from the entity.
+
+### _With NOT NULL id_
+
+When the received ___User___ entity has actually a value in its `id` property. The method will `UPDATE` the entity corresponding to the received id.
+
+As outcome, this time `save` method executes the next query:
+
+```sql
+UPDATE
+	users 
+SET
+	usr_active=?,
+	usr_age=?,
+	usr_lastname=?,
+	usr_name=? 
+WHERE
+	usr_id=?
+```
+
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _deleteById_
 
