@@ -23,10 +23,10 @@
 * [_Repository_](#repository)
 	* [_findAll_](#findall)
 	* [_findById_](#findbyid)
-	* [_findByActive_](#findbyactive)
-	* [_findByActiveAndId_](#findbyactiveandid)
 	* [_save_](#save)
 	* [_deleteById_](#deletebyid)
+	* [_findByActive_](#findbyactive)
+	* [_findByActiveAndId_](#findbyactiveandid)
 * [_User Controller_](#user-controller)
 	* [_Create User_](#create-user)
 	* [_Get All Users_](#get-all-users)
@@ -410,18 +410,18 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 	// Retrieve on "User" by id, in case is found
 	Optional<User> findById(Integer id);
 	
-	// Retrive the list of active users: findByActive(1), or inactive: findByActive(0)
-	public List<User> findByActive(Integer active);
-	
-	// Retrieve one Active User by Id findByActiveAndId(1, :id)
-	Optional<User> findByActiveAndId(Integer active, Integer id);
-	
 	// Add/Update a User entity
 	@SuppressWarnings("unchecked")
 	User save(User user);
 	
 	// Delete user by Id
 	void deleteById(Integer id);
+	
+	// Retrive the list of active users: findByActive(1), or inactive: findByActive(0)
+	public List<User> findByActive(Integer active);
+	
+	// Retrieve one Active User by Id findByActiveAndId(1, :id)
+	Optional<User> findByActiveAndId(Integer active, Integer id);
 }
 ```
 
@@ -442,16 +442,16 @@ By extending JpaRepository we get at a bunch of generic CRUD methods into our ty
 ## _findById_
 
 
-## _findByActive_
-
-
-## _findByActiveAndId_
+## _save_
 
 
 ## _deleteById_
 
 
-## _save_
+## _findByActive_
+
+
+## _findByActiveAndId_
 
 
 # _User Controller_
