@@ -288,7 +288,7 @@ Now we need a Bean, I mean, a Java class which will be mapped with the database 
 
 Besides that, the class has to have the getters and setters methods. They are not included in the below definition of code. But you can find the complete code in [_User.java_](src/main/java/com/fjcorona/springboot/user/endpoint/models/User.java) file.
 
-In this bean we use some annotations form `javax.persistence`package.
+In this bean we use some annotations form `javax.persistence` package.
 
 ```java
 package com.fjcorona.springboot.user.endpoint.models;
