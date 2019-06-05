@@ -393,6 +393,8 @@ Something we have to consider and never forget is that the `@Entity` annotation,
 
 We have this implementation in [_UserRepository.java_](src/main/java/com/fjcorona/springboot/user/endpoint/repositories/UserRepository.java) file.
 
+![user-repository](pictures/repository/user-repository.png)
+
 ```java
 package com.fjcorona.springboot.user.endpoint.repositories;
 
