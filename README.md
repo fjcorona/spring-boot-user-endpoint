@@ -583,6 +583,34 @@ WHERE
 
 ## _findByActiveAndId_
 
+In the same way that we can use method `findByXx`, JPA flexibility let us to acces to methods `findByXxAndYy` style.
+
+This way we can access to the method _findByActiveAndId_ to be more specific an get one active or inactive user by the related id.
+
+```java
+Optional<User> findByActiveAndId(Integer active, Integer id);
+```
+
+The return type is an ***Optional***, if a user with that conditoons is found, a ___User___ entity will be retrived.
+
+The internal query is:
+
+```sql
+SELECT 
+	usr_id id,
+	usr_name name,
+	usr_lastname lastname,
+	usr_age age,
+	usr_active active 
+FROM 
+	users;
+WHERE
+	usr_active=?
+AND
+	usr_id=?
+```
+
+[![go-up](pictures/go-up.png)](#menu)
 
 # _User Controller_
 
