@@ -40,6 +40,7 @@
 	* [_Activate User_](#activate-user)
 	* [_Deactivate User_](#deactivate-user)
 * [_Postman_](#postman)
+	* Get All Users 
 
 # _Introduction_
 
@@ -685,6 +686,8 @@ AND
 # _Postman_
 
 [![go-up](pictures/go-up.png)](#menu)
+
+## _Get All Users_
 
 
 
