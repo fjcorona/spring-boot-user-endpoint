@@ -46,6 +46,8 @@
 	* [_Delete User_](#delete-user-1)
 	* [_Get All Active Users_](#get-all-active-users-1)
 	* [_Get Active User By ID_](#get-active-user-by-id-1)
+	* [_Get All Inactive Users_](#get-all-inactive-users-1)
+	* [_Get Inactive User By ID_](#get-inactive-user-by-id-1)
 	* [_Active User_](#active-user)
 	* [_Deactive User_](#deactive-user)
 	* [_Import Collection_](#import-collection)
@@ -665,6 +667,12 @@ public class UserController {
 	
 	@GetMapping("/users-active/{id}")
 	public User retriveOneActiveUserById(@PathVariable Integer id) { /* ... */ }
+	
+	@GetMapping("/users-inactive")
+	public List<User> retriveAllInactiveUsers() { /* ... */ }
+	
+	@GetMapping("/users-inactive/{id}")
+	public User retriveOneInActiveUserById(@PathVariable Integer id) { /* ... */ }
 		
 	@PutMapping("/users/active/{id}")
 	public User activeUser(@PathVariable Integer id) { /* ... */ }
@@ -791,6 +799,35 @@ public User retriveOneActiveUserById(@PathVariable Integer id) {
 	Optional<User> user = repository.findByActiveAndId(1, id);
 	// Return user if it was found, otherwise return an empty instance
 	return (user.isPresent()) ? user.get() : new User();
+}
+```
+
+[![go-up](pictures/go-up.png)](#menu)
+
+## _Get All Inactive Users_
+
+```java
+@GetMapping("/users-inactive")
+public List<User> retriveAllInactiveUsers() {
+	// Send 0 to get all inactive users
+	List<User> users = repository.findByActive(0);
+	// Return all active users
+	return users;
+}
+```
+
+[![go-up](pictures/go-up.png)](#menu)
+
+## _Get Inactive User By Id_
+
+```java
+@GetMapping("/users-inactive/{id}")
+public User retriveOneInactiveUserById(@PathVariable Integer id) {
+	// Look for the inactive user related wit the received id
+	Optional<User> user = repository.findByActiveAndId(0, id);
+	// Return user if it was found, otherwise return an empty instance
+	return (user.isPresent()) ? user.get() : new User();
+}return (user.isPresent()) ? user.get() : new User();
 }
 ```
 
