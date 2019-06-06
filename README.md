@@ -648,53 +648,32 @@ public class UserController {
 	private UserRepository repository;
 
 	@GetMapping("/users")
-	public List<User> retriveAllUsers() {
-		/* Code Here */
-	}
+	public List<User> retriveAllUsers() { /* Code Here */ }
 	
-	@GetMapping("/users/{id}")
-	public User retriveOneUserById(@PathVariable Integer id) {
-		/* Code Here */
-	}
-
+	@GetMapping("/users/{id}") { /* Code Here */ }
+	
 	@PostMapping("/users")
-	public User createUser(@RequestBody User user) {
-		/* Code Here */
-	}
+	public User createUser(@RequestBody User user) { /* Code Here */ }
 	
 	@PutMapping("/users/{id}")
-	public User updateUser(@RequestBody User user, @PathVariable Integer id) {
-		/* Code Here */
-	}
+	public User updateUser(@RequestBody User user, @PathVariable Integer id) { /* Code Here */ }
 
 	@DeleteMapping("/users/{id}")
-	public void deleteStudent(@PathVariable Integer id) {
-		/* Code Here */
-	}
+	public void deleteStudent(@PathVariable Integer id) { /* Code Here */ }
 	
 	@GetMapping("/users-active")
-	public List<User> retriveAllActiveUsers() {
-		/* Code Here */
-	}
-
-	@GetMapping("/users-active/{id}")
-	public User retriveOneActiveUserById(@PathVariable Integer id) {
-		/* Code Here */
-	}
+	public List<User> retriveAllActiveUsers() { /* Code Here */ }
 	
+	@GetMapping("/users-active/{id}")
+	public User retriveOneActiveUserById(@PathVariable Integer id) { /* Code Here */ }
+		
 	@PutMapping("/users/active/{id}")
-	public User activeUser(@PathVariable Integer id) {
-		/* Code Here */
-	}
-
+	public User activeUser(@PathVariable Integer id) { /* Code Here */ }
+	
 	@PutMapping("/users/deactive/{id}")
-	public User deactiveUser(@PathVariable Integer id) {
-		/* Code Here */
-	}
+	public User deactiveUser(@PathVariable Integer id) { /* Code Here */ }
 
-	private User activeDeactiveUser(Integer id, Integer active) {
-		/* Code Here */
-	}
+	private User activeDeactiveUser(Integer id, Integer active) { /* Code Here */ }
 
 }
 ```
