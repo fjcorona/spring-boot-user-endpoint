@@ -624,6 +624,79 @@ AND
 # _User Controller_
 
 ```java
+package com.fjcorona.springboot.user.endpoint.controllers;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.fjcorona.springboot.user.endpoint.models.User;
+import com.fjcorona.springboot.user.endpoint.repositories.UserRepository;
+
+@RestController
+public class UserController {
+
+	@Autowired
+	private UserRepository repository;
+
+	@GetMapping("/users")
+	public List<User> retriveAllUsers() {
+		/* Code Here */
+	}
+	
+	@GetMapping("/users/{id}")
+	public User retriveOneUserById(@PathVariable Integer id) {
+		/* Code Here */
+	}
+
+	@PostMapping("/users")
+	public User createUser(@RequestBody User user) {
+		/* Code Here */
+	}
+	
+	@PutMapping("/users/{id}")
+	public User updateUser(@RequestBody User user, @PathVariable Integer id) {
+		/* Code Here */
+	}
+
+	@DeleteMapping("/users/{id}")
+	public void deleteStudent(@PathVariable Integer id) {
+		/* Code Here */
+	}
+	
+	@GetMapping("/users-active")
+	public List<User> retriveAllActiveUsers() {
+		/* Code Here */
+	}
+
+	@GetMapping("/users-active/{id}")
+	public User retriveOneActiveUserById(@PathVariable Integer id) {
+		/* Code Here */
+	}
+	
+	@PutMapping("/users/active/{id}")
+	public User activeUser(@PathVariable Integer id) {
+		/* Code Here */
+	}
+
+	@PutMapping("/users/deactive/{id}")
+	public User deactiveUser(@PathVariable Integer id) {
+		/* Code Here */
+	}
+
+	private User activeDeactiveUser(Integer id, Integer active) {
+		/* Code Here */
+	}
+
+}
 ```
 
 [![go-up](pictures/go-up.png)](#menu)
