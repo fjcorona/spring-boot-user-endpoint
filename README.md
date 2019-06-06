@@ -39,6 +39,7 @@
 	* [_Get Active User By Id_](#get-active-user-by-id)
 	* [_Activate/Deactivate User_](#activate-deactivate-user)
 * [_Postman_](#postman)
+	* [_Import Collection_](#import-collection)
 	* [_Get All Users_](#get-all-users-1)
 	* [_Get User By Id_](#get-user-by-id-1)
 	* [_Add User_](#add-user)
@@ -842,6 +843,10 @@ private User activeDeactiveUser(Integer id, Integer active) {
 [![go-up](pictures/go-up.png)](#menu)
 
 # _Postman_
+
+[![go-up](pictures/go-up.png)](#menu)
+
+## _Import Collection_
 
 [![go-up](pictures/go-up.png)](#menu)
 
