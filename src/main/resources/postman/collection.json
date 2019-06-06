@@ -9,7 +9,7 @@
 			"name": "Users",
 			"item": [
 				{
-					"name": "Get All User",
+					"name": "Get All Users",
 					"request": {
 						"method": "GET",
 						"header": [],
