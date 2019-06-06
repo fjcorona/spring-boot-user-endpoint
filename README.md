@@ -30,13 +30,13 @@
 	* [_findByActive_](#findbyactive)
 	* [_findByActiveAndId_](#findbyactiveandid)
 * [_User Controller_](#user-controller)
-	* [_Create User_](#create-user)
 	* [_Get All Users_](#get-all-users)
 	* [_Get User By Id_](#get-user-by-id)
-	* [_Get All Active_](#get-all-active-users)
-	* [_Get Active By Id_](#get-active-user-by-id)
+	* [_Create User_](#create-user)
 	* [_Update User_](#update-user)
 	* [_Delete User_](#delete-user)
+	* [_Get All Active_](#get-all-active-users)
+	* [_Get Active By Id_](#get-active-user-by-id)
 	* [_Activate User_](#activate-user)
 	* [_Deactivate User_](#deactivate-user)
 * [_Postman_](#postman)
@@ -617,11 +617,6 @@ AND
 ```java
 ```
 
-## _Create User_
-
-```java
-```
-
 [![go-up](pictures/go-up.png)](#menu)
 
 ## _Get All Users_
@@ -638,14 +633,7 @@ AND
 
 [![go-up](pictures/go-up.png)](#menu)
 
-## _Get All Active Users_
-
-```java
-```
-
-[![go-up](pictures/go-up.png)](#menu)
-
-## _Get Active User By Id_
+## _Create User_
 
 ```java
 ```
@@ -660,6 +648,20 @@ AND
 [![go-up](pictures/go-up.png)](#menu)
 
 ## _Delete User_
+
+```java
+```
+
+[![go-up](pictures/go-up.png)](#menu)
+
+## _Get All Active Users_
+
+```java
+```
+
+[![go-up](pictures/go-up.png)](#menu)
+
+## _Get Active User By Id_
 
 ```java
 ```
