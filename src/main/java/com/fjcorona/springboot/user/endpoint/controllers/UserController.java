@@ -100,8 +100,14 @@ public class UserController {
 	 */
 	@DeleteMapping("/users/{id}")
 	public void deleteStudent(@PathVariable Integer id) {
-		// Delete user
-		repository.deleteById(id);
+		// Look for the user we want to update
+		Optional<User> userOptional = repository.findById(id);
+
+		// In case User exists delete it
+		if (userOptional.isPresent()) {
+			// Delete user
+			repository.deleteById(id);
+		}
 	}
 
 	/**
