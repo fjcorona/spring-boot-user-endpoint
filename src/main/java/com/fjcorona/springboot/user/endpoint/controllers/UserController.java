@@ -26,87 +26,117 @@ public class UserController {
 
 	@GetMapping("/users")
 	public List<User> retriveAllUsers() {
+		// Get all users entities
 		List<User> users = repository.findAll();
+		// Return found users
 		return users;
 	}
 
 	@GetMapping("/users/{id}")
 	public User retriveOneUserById(@PathVariable Integer id) {
+		// Look for the specific User
 		Optional<User> user = repository.findById(id);
-		return user.get();
+		// Return user if it was found, otherwise return an empty instance
+		return (user.isPresent()) ? user.get() : new User();
 	}
 
 	@PostMapping("/users")
-	public ResponseEntity<Object> createUser(@RequestBody User user) {
+	public User createUser(@RequestBody User user) {
+		// By default a new user is active
 		user.setActive(1);
+		// Insert the new user and save it
 		User savedUser = repository.save(user);
-
-		URI location = ServletUriComponentsBuilder
-				.fromCurrentRequest()
-				.path("/{id}")
-				.buildAndExpand(savedUser.getId())
-				.toUri();
-
-		return ResponseEntity.created(location).build();
+		// Return the inserted user
+		return savedUser;
 	}
 
 	@PutMapping("/users/{id}")
-	public ResponseEntity<Object> updateUser(@RequestBody User user, @PathVariable Integer id) {
+	public User updateUser(@RequestBody User user, @PathVariable Integer id) {
+		// Look for the user we want to update
 		Optional<User> userOptional = repository.findById(id);
 
+		// In case User doesn't exist, return an empty instance
 		if (!userOptional.isPresent()) {
-			return ResponseEntity.notFound().build();
+			new User();
 		}
 
+		// Set received user with the received id
 		user.setId(id);
+		// Set received user with the status from the found user
 		user.setActive(userOptional.get().getActive());
 
+		// Save user
 		User savedUser = repository.save(user);
 
-		return ResponseEntity.noContent().build();
+		// Return saved user
+		return savedUser;
 	}
-	
+
 	@DeleteMapping("/users/{id}")
 	public void deleteStudent(@PathVariable Integer id) {
+		// Delete user
 		repository.deleteById(id);
 	}
 
 	@GetMapping("/users-active")
 	public List<User> retriveAllActiveUsers() {
+		// Send 1 to get all active users
 		List<User> users = repository.findByActive(1);
+		// Return all active users
 		return users;
 	}
 
 	@GetMapping("/users-active/{id}")
 	public User retriveOneActiveUserById(@PathVariable Integer id) {
+		// Look for the active user related wit the received id
 		Optional<User> user = repository.findByActiveAndId(1, id);
-		return user.get();
+		// Return user if it was found, otherwise return an empty instance
+		return (user.isPresent()) ? user.get() : new User();
 	}
 
 	@PutMapping("/users/active/{id}")
-	public ResponseEntity<Object> activeUser(@PathVariable Integer id) {
+	public User activeUser(@PathVariable Integer id) {
+		// Active user with the received id
 		return this.activeDeactiveUser(id, 1);
 	}
 
 	@PutMapping("/users/deactive/{id}")
-	public ResponseEntity<Object> deactiveUser(@PathVariable Integer id) {
+	public User deactiveUser(@PathVariable Integer id) {
+		// Deactive user with the received id
 		return this.activeDeactiveUser(id, 0);
 	}
-	
-	private ResponseEntity<Object> activeDeactiveUser(Integer id, Integer active) {
+
+	/**
+	 * 
+	 * @param id
+	 * @param active
+	 * @return
+	 * 
+	 * Depending on value of active param, the metod actives or deactives
+	 * the user with id param
+	 */
+	private User activeDeactiveUser(Integer id, Integer active) {
+		// Look for the user we want to update
 		Optional<User> userOptional = repository.findById(id);
 
+		// In case User doesn't exist, return an empty instance
 		if (!userOptional.isPresent()) {
-			return ResponseEntity.notFound().build();
+			return new User();
 		}
 
+		// Get user found
 		User user = userOptional.get();
+
+		// Set found user with the received id
 		user.setId(id);
+		// Set found user with the received active
 		user.setActive(active);
 
-		repository.save(user);
+		// Save user
+		User savedUser = repository.save(user);
 
-		return ResponseEntity.noContent().build();
+		// Return saved user
+		return savedUser;
 	}
 
 }
