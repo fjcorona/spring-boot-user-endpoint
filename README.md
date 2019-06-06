@@ -45,13 +45,15 @@
 
 This project is especially focused on beginners, for all those who just want to know a quick and simple way to create microservices in spring boot.
 
-Here is a small example in which you will be able to perform CRUD operations for users, as well as activate and deactivate them. All this in a very isolated way to a graphical interface, the way it will be done through endpoints with REST requests, which can be consumed From any application or client that has the capacity to consume them. We will test the endpoints with Postman.
+Here is a small example in which you will be able to perform CRUD operations for users, as well as activate and deactivate them. All this in a very isolated way to a graphical interface, the way it will be done through endpoints with REST requests, which can be consumed from any application or client that has the capacity to consume them. We will test the endpoints with Postman.
 
 [![go-up](pictures/go-up.png)](#menu)
 
 # _Application Properties_
 
 When we are working with Spring Boot, we have an [_application.properties_](src/main/resources/application.properties) file, here we can make some important configurations. There are some configurations which Spring Boot understand by default, but there are another ones that we have to explicity set in the file.
+
+![application-properties](pictures/application-properties/application-properties.png)
 
 For this project we will set just four properties.
 
@@ -133,7 +135,7 @@ Starter for building web, including RESTful, applications using Spring MVC. Uses
 
 ## _Spring Boot Developer Tools_
 
-Spring Boot includes an additional set of tools that can make the application development experience a little more pleasant. The spring-boot-devtools module can be included in any project to provide additional development-time features.
+Spring Boot includes an additional set of tools that can make the application development experience a little more pleasant. The `spring-boot-devtools` module can be included in any project to provide additional development-time features.
 
 ```xml
 <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools -->
@@ -148,7 +150,7 @@ Spring Boot includes an additional set of tools that can make the application de
 
 ## _Spring Boot Data JPA Starter_
 
-Spring Boot Starters are a set of convenient dependency descriptors that you can include in your application. You get a one-stop-shop for all the Spring and related technology that you need without having to hunt through sample code and copy paste loads of dependency descriptors. For example, if you want to get started using Spring and JPA for database access just include the spring-boot-starter-data-jpa dependency in your project, and you are good to go.
+Spring Boot Starters are a set of convenient dependency descriptors that you can include in your application. You get a one-stop-shop for all the Spring and related technology that you need without having to hunt through sample code and copy paste loads of dependency descriptors. For example, if you want to get started using Spring and JPA for database access just include the `spring-boot-starter-data-jpa` dependency in your project, and you are good to go.
 
 ```xml
 <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
@@ -163,7 +165,7 @@ Spring Boot Starters are a set of convenient dependency descriptors that you can
 ## _H2 Database Engine_
 
 H2 is a relational database management system written in Java. It can be embedded in Java applications or run in client-server mode.
-It is possible to create both in-memory tables.
+It is possible to create in-memory tables.
 
 ```xml
 <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
@@ -246,7 +248,7 @@ INSERT INTO users (usr_id, usr_name, usr_lastname, usr_age, usr_active)
 VALUES (10010, 'Serafino', 'Arriaga', 44, 1);
 ```
 
-I want to mention a particular field in the table, I'm talking about ***usr_active***, its purpose is to work as a kind of Boolean value, where:
+I want to mention a particular field in the table, I'm talking about ***usr_active***, its purpose is to work as a kind of boolean value, where:
 
 |Numeric Value|Boolean Value|Meaning|
 |:----:|:----:|:----:|
@@ -371,7 +373,7 @@ For this annotation there is another point that I would like to emphasize, you c
 
 ## _Primary Key_
 
-The `@Id` annotation is inherited from `javax.persistence.Id` indicating the member field below is the ___primary key___ of current entity.
+The `@Id` annotation is inherited from `javax.persistence.Id` indicating the member field below is the ___primary key___ of the current entity.
 
 The `@GeneratedValue` annotation is to configure the way of increment of the specified ___primary key___.
 
@@ -462,7 +464,7 @@ FROM
 
 ## _findById_
 
-We expect a single result Entity ___User___ has been specified as a return type.
+We expect a single result Entity, ___User___ has been specified as a return type.
 
 ```java
 Optional<User> findById(Integer id);
@@ -504,7 +506,7 @@ INSERT
 INTO 
 	users 
 		(usr_id, usr_active, usr_age, usr_lastname, usr_name) 
-	values 
+	VALUES 
 		(null, ?, ?, ?, ?)
 ```
 
