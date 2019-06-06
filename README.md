@@ -37,7 +37,7 @@
 	* [_Delete User_](#delete-user)
 	* [_Get All Active Users_](#get-all-active-users)
 	* [_Get Active User By Id_](#get-active-user-by-id)
-	* [_Activate/Deactivate User_](#activate-deactivate-user)
+	* [_Activate/Deactivate User_](#activatedeactivate-user)
 * [_Postman_](#postman)
 	* [_Import Collection_](#import-collection)
 	* [_Get All Users_](#get-all-users-1)
