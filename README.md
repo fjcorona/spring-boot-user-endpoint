@@ -42,6 +42,13 @@
 * [_Postman_](#postman)
 	* [_Get All Users_](#get-all-users-1)
 	* [_Get User By Id_](#get-user-by-id-1)
+	* [_Add User_](#add-user)
+	* [_Update User_](#update-user-1)
+	* [_Delete User_](#delete-user-1)
+	* [_Get All Active Users_](#get-all-active-users)
+	* [_Get Active User By ID_](#get-active-user-by-id)
+	* [_Active User_](#active-usre)
+	* [_Deactive User_](#deactive-usre)
 
 # _Introduction_
 
@@ -692,9 +699,35 @@ AND
 
 [![go-up](pictures/go-up.png)](#menu)
 
-## _Get User By ID_
+## _Get User By Id_
 
-[![go-up](pictures/go-up.png)](#menu)s
+[![go-up](pictures/go-up.png)](#menu)
 
+## _Add User_
 
+[![go-up](pictures/go-up.png)](#menu)
+
+## _Update User_
+
+[![go-up](pictures/go-up.png)](#menu)
+
+## _Delete User_
+
+[![go-up](pictures/go-up.png)](#menu)
+
+## _Get All Active Users_
+
+[![go-up](pictures/go-up.png)](#menu)
+
+## _Get Active User By ID_
+
+[![go-up](pictures/go-up.png)](#menu)
+
+## _Active User_
+
+[![go-up](pictures/go-up.png)](#menu)
+
+## _Deactive User_
+
+[![go-up](pictures/go-up.png)](#menu)
 
