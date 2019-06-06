@@ -643,7 +643,6 @@ import com.fjcorona.springboot.user.endpoint.repositories.UserRepository;
 
 @RestController
 public class UserController {
-
 	@Autowired
 	private UserRepository repository;
 
@@ -674,7 +673,6 @@ public class UserController {
 	public User deactiveUser(@PathVariable Integer id) { /* ... */ }
 
 	private User activeDeactiveUser(Integer id, Integer active) { /* ... */ }
-
 }
 ```
 
