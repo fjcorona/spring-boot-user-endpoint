@@ -47,7 +47,7 @@ This project is especially focused on beginners, for all those who just want to 
 
 Here is a small example in which you will be able to perform CRUD operations for users, as well as activate and deactivate them. All this in a very isolated way to a graphical interface, the way it will be done through endpoints with REST requests, which can be consumed from any application or client that has the capacity to consume them. We will test the endpoints with Postman.
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 # _Application Properties_
 
@@ -57,7 +57,7 @@ When we are working with Spring Boot, we have an [_application.properties_](src/
 
 For this project we will set just four properties.
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Application Name_
 
@@ -69,7 +69,7 @@ This is the way to set the property at file:
 spring.application.name=user-endpoint-service
 ```
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Port_
 
@@ -83,7 +83,7 @@ I've selected the ___8888___ port, this way, my microservice will run in the nex
 
 [_http://localhost:8888_](http://localhost:8888)
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _JPA Show SQL_
 
@@ -95,7 +95,7 @@ spring.jpa.show-sql=true
 
 We just set the property as true, if we don't set this property, by default is false and no query is going to be shown. Later we will see some examples.
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _JPA Format SQL_
 
@@ -109,7 +109,7 @@ In the same way, this property by default is false, so we have to set as true.
 
 Later we will see some examples of both properties working together.
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 # _Dependencies_
 
@@ -117,7 +117,7 @@ As we can see at the structure, this project has been made under maven. That's w
 
 We can find those dependencies at [_pom.xml_](pom.xml)
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Spring Boot Web Starter_
 
@@ -131,7 +131,7 @@ Starter for building web, including RESTful, applications using Spring MVC. Uses
 </dependency>
 ```
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Spring Boot Developer Tools_
 
@@ -146,7 +146,7 @@ Spring Boot includes an additional set of tools that can make the application de
 </dependency>
 ```
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Spring Boot Data JPA Starter_
 
@@ -160,7 +160,7 @@ Spring Boot Starters are a set of convenient dependency descriptors that you can
 </dependency>
 ```
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _H2 Database Engine_
 
@@ -176,7 +176,7 @@ It is possible to create in-memory tables.
 </dependency>
 ```
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Spring Boot Test Starter_
 
@@ -191,7 +191,7 @@ Starter for testing Spring Boot applications with libraries including JUnit, Ham
 </dependency>
 ```
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _JUnit_
 
@@ -207,7 +207,7 @@ JUnit is a regression testing framework written by Erich Gamma and Kent Beck. It
 </dependency>
 ```
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 # _Database_
 
@@ -215,7 +215,7 @@ As it was mentioned before ___H2 Engine___ is the _RDBMS_ we will use to persist
 
 We make the assumption we are working with JPA.
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Database Feeding_
 
@@ -257,7 +257,7 @@ I want to mention a particular field in the table, I'm talking about ***usr_acti
 
 It must be remembered that in addition to CRUD performance, operations will be implemented to deactivate users, without the need to eliminate them, as well as to reactivate them.
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _CREATE Query_
 
@@ -284,7 +284,7 @@ Remember we can see it due to `spring.jpa.show-sql` and `spring.jpa.show-sql` ha
 As it was mentioned, data types are made according to the values they are feed with. We can observe too that `VARCHAR` fields get by default 255 length.
 The definition of the files as `NOT NULL` or `PRIMARY KEY`are not from the SQL file, but there are from the annotations in the been, as we will see in the next section.
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 # _Bean_
 
@@ -337,7 +337,7 @@ public class User {
 }
 ```
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Entity_
 
@@ -352,7 +352,7 @@ public class User {
 
 This way ___User___ class knows that is mapped with ***users*** table.
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Column_
 
@@ -369,7 +369,7 @@ You might think that the best would be for the table to have the same name as th
 
 For this annotation there is another point that I would like to emphasize, you can see that in addition to name, another parameter `nullable = false` is being sent, this is what results in the fields of our temporary table being created as `NOT NULL`.
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Primary Key_
 
@@ -391,7 +391,7 @@ An they both are the reason osf the primary key in create quey we've seen before
 
 Something we have to consider and never forget is that the `@Entity` annotation, together with `@Id` annotation is the minimum we need in order to create an entity.
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 # _Repository_
 
@@ -435,7 +435,7 @@ When we make `JpaRepository<User, Integer>` we indicate that ___JPARepository___
 
 By extending JpaRepository we get at a bunch of generic CRUD methods into our type that allows saving Users, deleting them and so on.
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _findAll_
 
@@ -460,7 +460,7 @@ FROM
 	users;
 ```
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _findById_
 
@@ -488,7 +488,7 @@ WHERE
 Where `?` simbol represents the id owned by the user we are looking for.
 Given that the id is a primary key, that is, a unique value to identify the user, we can be sure that if it exists, we will only obtain one user, otherwise the method will not return any user, that is why the return of the function is an ___Optional___ type.
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _save_
 
@@ -534,7 +534,7 @@ WHERE
 
 The method will return a ___User___ instance with the updated values.
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _deleteById_
 
@@ -553,7 +553,7 @@ DELETE
 		usr_id=?
 ```
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _findByActive_
 
@@ -579,7 +579,7 @@ WHERE
 	usr_active=?
 ```
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _findByActiveAndId_
 
@@ -610,7 +610,7 @@ AND
 	usr_id=?
 ```
 
-[![go-menu](pictures/go-menu.png)](#menu)
+[![go-up](pictures/go-up.png)](#menu)
 
 # _User Controller_
 
