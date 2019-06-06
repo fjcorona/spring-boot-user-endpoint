@@ -35,8 +35,8 @@
 	* [_Create User_](#create-user)
 	* [_Update User_](#update-user)
 	* [_Delete User_](#delete-user)
-	* [_Get All Active_](#get-all-active-users)
-	* [_Get Active By Id_](#get-active-user-by-id)
+	* [_Get All Active Users_](#get-all-active-users)
+	* [_Get Active User By Id_](#get-active-user-by-id)
 	* [_Activate User_](#activate-user)
 	* [_Deactivate User_](#deactivate-user)
 * [_Postman_](#postman)
@@ -45,10 +45,10 @@
 	* [_Add User_](#add-user)
 	* [_Update User_](#update-user-1)
 	* [_Delete User_](#delete-user-1)
-	* [_Get All Active Users_](#get-all-active-users)
-	* [_Get Active User By ID_](#get-active-user-by-id)
-	* [_Active User_](#active-usre)
-	* [_Deactive User_](#deactive-usre)
+	* [_Get All Active Users_](#get-all-active-users-1)
+	* [_Get Active User By ID_](#get-active-user-by-id-1)
+	* [_Active User_](#active-user)
+	* [_Deactive User_](#deactive-user)
 
 # _Introduction_
 
