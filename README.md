@@ -885,17 +885,138 @@ private User activeDeactiveUser(Integer id, Integer active) {
 
 ## _Get All Users_
 
+```json
+[
+    {
+        "id": 10001,
+        "name": "Javier",
+        "lastname": "Corona",
+        "age": 30,
+        "active": 1
+    },
+    {
+        "id": 10002,
+        "name": "Francisco",
+        "lastname": "Sánchez",
+        "age": 29,
+        "active": 1
+    },
+    {
+        "id": 10003,
+        "name": "Alejandra",
+        "lastname": "López",
+        "age": 25,
+        "active": 0
+    },
+    {
+        "id": 10004,
+        "name": "Fernanda",
+        "lastname": "Parra",
+        "age": 32,
+        "active": 1
+    },
+    {
+        "id": 10005,
+        "name": "Humberto",
+        "lastname": "Lisboa",
+        "age": 22,
+        "active": 1
+    },
+    {
+        "id": 10006,
+        "name": "Paola",
+        "lastname": "Duarte",
+        "age": 33,
+        "active": 1
+    },
+    {
+        "id": 10007,
+        "name": "Ernesto",
+        "lastname": "Duarte",
+        "age": 33,
+        "active": 0
+    },
+    {
+        "id": 10008,
+        "name": "Filemón",
+        "lastname": "Hernández",
+        "age": 25,
+        "active": 0
+    },
+    {
+        "id": 10009,
+        "name": "Pantaleón",
+        "lastname": "Pérez",
+        "age": 23,
+        "active": 1
+    },
+    {
+        "id": 10010,
+        "name": "Serafino",
+        "lastname": "Arriaga",
+        "age": 44,
+        "active": 1
+    }
+]
+```
+
 [![go-up](pictures/go-up.png)](#menu)
 
 ## _Get User By Id_
+
+```json
+{
+    "id": 10003,
+    "name": "Alejandra",
+    "lastname": "López",
+    "age": 25,
+    "active": 0
+}
+```
 
 [![go-up](pictures/go-up.png)](#menu)
 
 ## _Add User_
 
+```json
+{
+    "name": "Seferino",
+    "lastname": "Gabriel",
+    "age": 60
+}
+```
+
+```json
+{
+    "id": 10011,
+    "name": "Seferino",
+    "lastname": "Gabriel",
+    "age": 60,
+    "active": 1
+}
+```
+
 [![go-up](pictures/go-up.png)](#menu)
 
 ## _Update User_
+
+```json
+{
+    "name": "Mr. Javo",
+    "lastname": "Crown",
+    "age": 30
+}
+```
+
+```json
+{
+    "id": 10003,
+    "name": "Mr. Javo",
+    "lastname": "Crown",
+    "age": 30,
+    "active": 0
+}
+```
 
 [![go-up](pictures/go-up.png)](#menu)
 
@@ -904,6 +1025,67 @@ private User activeDeactiveUser(Integer id, Integer active) {
 [![go-up](pictures/go-up.png)](#menu)
 
 ## _Get All Active Users_
+
+```json
+[
+    {
+        "id": 10001,
+        "name": "Javier",
+        "lastname": "Corona",
+        "age": 30,
+        "active": 1
+    },
+    {
+        "id": 10002,
+        "name": "Francisco",
+        "lastname": "Sánchez",
+        "age": 29,
+        "active": 1
+    },
+    {
+        "id": 10004,
+        "name": "Fernanda",
+        "lastname": "Parra",
+        "age": 32,
+        "active": 1
+    },
+    {
+        "id": 10005,
+        "name": "Humberto",
+        "lastname": "Lisboa",
+        "age": 22,
+        "active": 1
+    },
+    {
+        "id": 10006,
+        "name": "Paola",
+        "lastname": "Duarte",
+        "age": 33,
+        "active": 1
+    },
+    {
+        "id": 10009,
+        "name": "Pantaleón",
+        "lastname": "Pérez",
+        "age": 23,
+        "active": 1
+    },
+    {
+        "id": 10010,
+        "name": "Serafino",
+        "lastname": "Arriaga",
+        "age": 44,
+        "active": 1
+    },
+    {
+        "id": 10011,
+        "name": "Seferino",
+        "lastname": "Gabriel",
+        "age": 60,
+        "active": 1
+    }
+]
+```
 
 [![go-up](pictures/go-up.png)](#menu)
 
