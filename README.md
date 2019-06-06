@@ -40,7 +40,7 @@
 	* [_Activate User_](#activate-user)
 	* [_Deactivate User_](#deactivate-user)
 * [_Postman_](#postman)
-	* Get All Users 
+	* [_Get All Users_](#get-all-users-1)
 
 # _Introduction_
 
