@@ -37,8 +37,7 @@
 	* [_Delete User_](#delete-user)
 	* [_Get All Active Users_](#get-all-active-users)
 	* [_Get Active User By Id_](#get-active-user-by-id)
-	* [_Activate User_](#activate-user)
-	* [_Deactivate User_](#deactivate-user)
+	* [_Activate/Deactivate User_](#activate-deactivate-user)
 * [_Postman_](#postman)
 	* [_Get All Users_](#get-all-users-1)
 	* [_Get User By Id_](#get-user-by-id-1)
@@ -681,6 +680,13 @@ public class UserController {
 ## _Get All Users_
 
 ```java
+@GetMapping("/users")
+public List<User> retriveAllUsers() {
+	// Get all users entities
+	List<User> users = repository.findAll();
+	// Return found users
+	return users;
+}
 ```
 
 [![go-up](pictures/go-up.png)](#menu)
@@ -688,6 +694,13 @@ public class UserController {
 ## _Get User By Id_
 
 ```java
+@GetMapping("/users/{id}")
+public User retriveOneUserById(@PathVariable Integer id) {
+	// Look for the specific User
+	Optional<User> user = repository.findById(id);
+	// Return user if it was found, otherwise return an empty instance
+	return (user.isPresent()) ? user.get() : new User();
+}
 ```
 
 [![go-up](pictures/go-up.png)](#menu)
@@ -695,6 +708,15 @@ public class UserController {
 ## _Create User_
 
 ```java
+@PostMapping("/users")
+public User createUser(@RequestBody User user) {
+	// By default a new user is active
+	user.setActive(1);
+	// Insert the new user and save it
+	User savedUser = repository.save(user);
+	// Return the inserted user
+	return savedUser;
+}
 ```
 
 [![go-up](pictures/go-up.png)](#menu)
@@ -702,6 +724,27 @@ public class UserController {
 ## _Update User_
 
 ```java
+@PutMapping("/users/{id}")
+public User updateUser(@RequestBody User user, @PathVariable Integer id) {
+	// Look for the user we want to update
+	Optional<User> userOptional = repository.findById(id);
+
+	// In case User doesn't exist, return an empty instance
+	if (!userOptional.isPresent()) {
+		new User();
+	}
+
+	// Set received user with the received id
+	user.setId(id);
+	// Set received user with the status from the found user
+	user.setActive(userOptional.get().getActive());
+
+	// Save user
+	User savedUser = repository.save(user);
+
+	// Return saved user
+	return savedUser;
+}
 ```
 
 [![go-up](pictures/go-up.png)](#menu)
@@ -709,6 +752,17 @@ public class UserController {
 ## _Delete User_
 
 ```java
+@DeleteMapping("/users/{id}")
+public void deleteStudent(@PathVariable Integer id) {
+	// Look for the user we want to update
+	Optional<User> userOptional = repository.findById(id);
+
+	// In case User exists delete it
+	if (userOptional.isPresent()) {
+		// Delete user
+		repository.deleteById(id);
+	}
+}
 ```
 
 [![go-up](pictures/go-up.png)](#menu)
@@ -716,6 +770,13 @@ public class UserController {
 ## _Get All Active Users_
 
 ```java
+@GetMapping("/users-active")
+public List<User> retriveAllActiveUsers() {
+	// Send 1 to get all active users
+	List<User> users = repository.findByActive(1);
+	// Return all active users
+	return users;
+}
 ```
 
 [![go-up](pictures/go-up.png)](#menu)
@@ -723,20 +784,59 @@ public class UserController {
 ## _Get Active User By Id_
 
 ```java
+@GetMapping("/users-active/{id}")
+public User retriveOneActiveUserById(@PathVariable Integer id) {
+	// Look for the active user related wit the received id
+	Optional<User> user = repository.findByActiveAndId(1, id);
+	// Return user if it was found, otherwise return an empty instance
+	return (user.isPresent()) ? user.get() : new User();
+}
 ```
 
 [![go-up](pictures/go-up.png)](#menu)
 
-## _Activate User_
+## _Activate/Deactivate User_
 
 ```java
+@PutMapping("/users/active/{id}")
+public User activeUser(@PathVariable Integer id) {
+	// Active user with the received id
+	return this.activeDeactiveUser(id, 1);
+}
 ```
 
-[![go-up](pictures/go-up.png)](#menu)
-
-## _Deactivate User_
+```java
+@PutMapping("/users/deactive/{id}")
+public User deactiveUser(@PathVariable Integer id) {
+	// Deactive user with the received id
+	return this.activeDeactiveUser(id, 0);
+}
+```
 
 ```java
+private User activeDeactiveUser(Integer id, Integer active) {
+	// Look for the user we want to update
+	Optional<User> userOptional = repository.findById(id);
+
+	// In case User doesn't exist, return an empty instance
+	if (!userOptional.isPresent()) {
+		return new User();
+	}
+
+	// Get user found
+	User user = userOptional.get();
+
+	// Set found user with the received id
+	user.setId(id);
+	// Set found user with the received active
+	user.setActive(active);
+
+	// Save user
+	User savedUser = repository.save(user);
+
+	// Return saved user
+	return savedUser;
+}
 ```
 
 [![go-up](pictures/go-up.png)](#menu)
