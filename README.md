@@ -48,7 +48,7 @@
 	* [_Get Active User By ID_](#get-active-user-by-id-1)
 	* [_Active User_](#active-user)
 	* [_Deactive User_](#deactive-user)
-	* [_Postman Collection_](#postman-collection)
+	* [_Import Collection_](#import-collection)
 
 # _Introduction_
 
