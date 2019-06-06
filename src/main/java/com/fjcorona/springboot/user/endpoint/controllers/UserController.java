@@ -137,6 +137,31 @@ public class UserController {
 
 	/**
 	 * 
+	 * @return
+	 */
+	@GetMapping("/users-inactive")
+	public List<User> retriveAllInactiveUsers() {
+		// Send 0 to get all inactive users
+		List<User> users = repository.findByActive(0);
+		// Return all active users
+		return users;
+	}
+
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
+	@GetMapping("/users-inactive/{id}")
+	public User retriveOneInactiveUserById(@PathVariable Integer id) {
+		// Look for the inactive user related wit the received id
+		Optional<User> user = repository.findByActiveAndId(0, id);
+		// Return user if it was found, otherwise return an empty instance
+		return (user.isPresent()) ? user.get() : new User();
+	}
+
+	/**
+	 * 
 	 * @param id
 	 * @return
 	 */
