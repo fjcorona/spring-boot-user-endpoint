@@ -38,8 +38,7 @@
 	* [_Get All Active Users_](#get-all-active-users)
 	* [_Get Active User By Id_](#get-active-user-by-id)
 	* [_Activate/Deactivate User_](#activatedeactivate-user)
-* [_Postman_](#postman)
-	* [_Import Collection_](#import-collection)
+* [_Test Endpoints_](#test-endpoints)
 	* [_Get All Users_](#get-all-users-1)
 	* [_Get User By Id_](#get-user-by-id-1)
 	* [_Add User_](#add-user)
@@ -49,6 +48,7 @@
 	* [_Get Active User By ID_](#get-active-user-by-id-1)
 	* [_Active User_](#active-user)
 	* [_Deactive User_](#deactive-user)
+	* [_Postman Collection_](#postman-collection)
 
 # _Introduction_
 
@@ -842,11 +842,7 @@ private User activeDeactiveUser(Integer id, Integer active) {
 
 [![go-up](pictures/go-up.png)](#menu)
 
-# _Postman_
-
-[![go-up](pictures/go-up.png)](#menu)
-
-## _Import Collection_
+# _Test Endpoints_
 
 [![go-up](pictures/go-up.png)](#menu)
 
@@ -883,6 +879,10 @@ private User activeDeactiveUser(Integer id, Integer active) {
 [![go-up](pictures/go-up.png)](#menu)
 
 ## _Deactive User_
+
+[![go-up](pictures/go-up.png)](#menu)
+
+## _Import Collection_
 
 [![go-up](pictures/go-up.png)](#menu)
 
