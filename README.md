@@ -614,44 +614,75 @@ AND
 
 # _User Controller_
 
+```java
+```
 
 ## _Create User_
 
+```java
+```
 
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Get All Users_
 
+```java
+```
 
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Get User By Id_
 
+```java
+```
 
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Get All Active Users_
 
+```java
+```
 
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Get Active User By Id_
 
+```java
+```
 
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Update User_
 
+```java
+```
 
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Delete User_
 
+```java
+```
 
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Activate User_
 
+```java
+```
 
+[![go-up](pictures/go-up.png)](#menu)
 
 ## _Deactivate User_
 
+```java
+```
 
+[![go-up](pictures/go-up.png)](#menu)
 
 # _Postman_
+
+[![go-up](pictures/go-up.png)](#menu)
 
 
 
