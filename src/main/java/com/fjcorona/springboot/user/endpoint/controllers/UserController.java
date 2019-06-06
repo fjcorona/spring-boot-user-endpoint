@@ -1,11 +1,9 @@
 package com.fjcorona.springboot.user.endpoint.controllers;
 
-import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,17 +11,25 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.fjcorona.springboot.user.endpoint.models.User;
 import com.fjcorona.springboot.user.endpoint.repositories.UserRepository;
 
+/**
+ * 
+ * @author Francisco Javier Corona Sánchez
+ *
+ */
 @RestController
 public class UserController {
 
 	@Autowired
 	private UserRepository repository;
 
+	/**
+	 * 
+	 * @return
+	 */
 	@GetMapping("/users")
 	public List<User> retriveAllUsers() {
 		// Get all users entities
@@ -32,6 +38,11 @@ public class UserController {
 		return users;
 	}
 
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
 	@GetMapping("/users/{id}")
 	public User retriveOneUserById(@PathVariable Integer id) {
 		// Look for the specific User
@@ -40,6 +51,11 @@ public class UserController {
 		return (user.isPresent()) ? user.get() : new User();
 	}
 
+	/**
+	 * 
+	 * @param user
+	 * @return
+	 */
 	@PostMapping("/users")
 	public User createUser(@RequestBody User user) {
 		// By default a new user is active
@@ -50,6 +66,12 @@ public class UserController {
 		return savedUser;
 	}
 
+	/**
+	 * 
+	 * @param user
+	 * @param id
+	 * @return
+	 */
 	@PutMapping("/users/{id}")
 	public User updateUser(@RequestBody User user, @PathVariable Integer id) {
 		// Look for the user we want to update
@@ -72,12 +94,20 @@ public class UserController {
 		return savedUser;
 	}
 
+	/**
+	 * 
+	 * @param id
+	 */
 	@DeleteMapping("/users/{id}")
 	public void deleteStudent(@PathVariable Integer id) {
 		// Delete user
 		repository.deleteById(id);
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	@GetMapping("/users-active")
 	public List<User> retriveAllActiveUsers() {
 		// Send 1 to get all active users
@@ -86,6 +116,11 @@ public class UserController {
 		return users;
 	}
 
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
 	@GetMapping("/users-active/{id}")
 	public User retriveOneActiveUserById(@PathVariable Integer id) {
 		// Look for the active user related wit the received id
@@ -94,12 +129,22 @@ public class UserController {
 		return (user.isPresent()) ? user.get() : new User();
 	}
 
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
 	@PutMapping("/users/active/{id}")
 	public User activeUser(@PathVariable Integer id) {
 		// Active user with the received id
 		return this.activeDeactiveUser(id, 1);
 	}
 
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
 	@PutMapping("/users/deactive/{id}")
 	public User deactiveUser(@PathVariable Integer id) {
 		// Deactive user with the received id

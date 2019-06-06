@@ -5,6 +5,10 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import com.fjcorona.springboot.user.endpoint.models.User;
 
+/**
+ * @author Francisco Javier Corona Sánchez
+ *
+ */
 public interface UserRepository extends JpaRepository<User, Integer> {
 	// Retrieve a list of all existent "User"
 	List<User> findAll();
