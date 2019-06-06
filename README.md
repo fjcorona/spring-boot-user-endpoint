@@ -41,6 +41,7 @@
 	* [_Deactivate User_](#deactivate-user)
 * [_Postman_](#postman)
 	* [_Get All Users_](#get-all-users-1)
+	* [_Get User By Id_](#get-user-by-id-1)
 
 # _Introduction_
 
@@ -688,6 +689,12 @@ AND
 [![go-up](pictures/go-up.png)](#menu)
 
 ## _Get All Users_
+
+[![go-up](pictures/go-up.png)](#menu)
+
+## _Get User By ID_
+
+[![go-up](pictures/go-up.png)](#menu)s
 
 
 
