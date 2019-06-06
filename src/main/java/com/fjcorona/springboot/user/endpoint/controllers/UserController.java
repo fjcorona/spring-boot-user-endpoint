@@ -188,8 +188,8 @@ public class UserController {
 	 * @param active
 	 * @return
 	 * 
-	 * Depending on value of active param, the metod actives or deactives
-	 * the user with id param
+	 *         Depending on value of active param, the metod actives or deactives
+	 *         the user with id param
 	 */
 	private User activeDeactiveUser(Integer id, Integer active) {
 		// Look for the user we want to update
