@@ -697,7 +697,7 @@ Every request handling method of the controller class automatically serializes r
 
 ## _Get All Users_
 
-This is maybe, the easiest implemented request, the only thing we need to do is call the [__findAll__](#findall) method form our repository and return wherever result we get, without further validation, beacuse in the worst of the cases we will get an empty array.
+This is maybe, the easiest implemented request, the only thing we need to do is call the [___findAll___](#findall) method form our repository and return wherever result we get, without further validation, beacuse in the worst of the cases we will get an empty array, in case all goes well we'll get an array of all users. We eill see the result wen test the methods
 
 ```java
 @GetMapping("/users")
