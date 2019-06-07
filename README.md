@@ -983,6 +983,8 @@ As a result, we obtain all the users with whom we initialize our database. But t
 
 ## _Get User By Id_
 
+___GET:___ `http:localhost/8080/users/`_`{{id}}`_
+
 ```json
 {
     "id": 10003,
@@ -997,6 +999,10 @@ As a result, we obtain all the users with whom we initialize our database. But t
 
 ## _Add User_
 
+___POST:___ `http:localhost/8080/users`
+
+___BODY REQUEST:___
+
 ```json
 {
     "name": "Seferino",
@@ -1004,6 +1010,7 @@ As a result, we obtain all the users with whom we initialize our database. But t
     "age": 60
 }
 ```
+___RESPONSE:___
 
 ```json
 {
@@ -1019,6 +1026,10 @@ As a result, we obtain all the users with whom we initialize our database. But t
 
 ## _Update User_
 
+___PUT:___ `http:localhost/8080/users/`_`{{id}}`_
+
+___BODY REQUEST:___
+
 ```json
 {
     "name": "Mr. Javo",
@@ -1026,6 +1037,8 @@ As a result, we obtain all the users with whom we initialize our database. But t
     "age": 30
 }
 ```
+___RESPONSE:___
+
 
 ```json
 {
@@ -1040,6 +1053,9 @@ As a result, we obtain all the users with whom we initialize our database. But t
 [![go-up](pictures/go-up.png)](#menu)
 
 ## _Delete User_
+
+
+___DELETE:___ `http:localhost/8080/users/`_`{{id}}`_
 
 [![go-up](pictures/go-up.png)](#menu)
 
