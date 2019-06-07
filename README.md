@@ -711,7 +711,6 @@ public List<User> retriveAllUsers() {
 
 By annotating method with `@GetMapping("/users")` we define a GET request at [___`http:localhost/8080/users`___](http:localhost/8080/users)
 
-
 [![go-up](pictures/go-up.png)](#menu)
 
 ## _Get User By Id_
