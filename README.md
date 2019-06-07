@@ -625,6 +625,11 @@ AND
 
 # _User Controller_
 
+The next we need is a Rest Controller, a class that helps us to interact with our database by sending information from outside to inside, and getting it from the inside out, through REST requests.
+
+In tbhe next section code, we can see only the structure, but we can find the whole implementation at [UsersController.java](src/main/java/com/fjcorona/springboot/user/endpoint/controllers/UserController.java) file, in the same way we will see the code when we review method by method in the next sections.
+
+
 ```java
 package com.fjcorona.springboot.user.endpoint.controllers;
 
@@ -684,9 +689,15 @@ public class UserController {
 }
 ```
 
+`@RestController` is a specialized version of the contorller. It includes the `@Controller` and `@ResponseBody` annotations and as a result, simplifies the controller implementation This way we can handle our REST requests.
+
+Every request handling method of the controller class automatically serializes return objects into _HttpResponse_. This way we can send and return _JSON_ information without add any other annotation.
+
 [![go-up](pictures/go-up.png)](#menu)
 
 ## _Get All Users_
+
+This is maybe, the easiest implemented request, the only thing we need to do is call the [__findAll__](#findall) method form our repository and return wherever result we get, without further validation, beacuse in the worst of the cases we will get an empty array.
 
 ```java
 @GetMapping("/users")
@@ -697,6 +708,9 @@ public List<User> retriveAllUsers() {
 	return users;
 }
 ```
+
+By annotating method with `@GetMapping("/users")` we define a GET request at [___`http:localhost/8080/users`___](http:localhost/8080/users)
+
 
 [![go-up](pictures/go-up.png)](#menu)
 
