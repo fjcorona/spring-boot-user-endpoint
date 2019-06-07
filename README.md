@@ -898,6 +898,12 @@ private User activeDeactiveUser(Integer id, Integer active) {
 
 ## _Get All Users_
 
+We just consume the next endpoint
+
+___GET:___ `http:localhost/8080/users`
+
+As a result, we obtain all the users with whom we initialize our database. But this time in ___JSON___ format, through which it is simpler and more standard to establish communication with any application that could consume our service.
+
 ```json
 [
     {
