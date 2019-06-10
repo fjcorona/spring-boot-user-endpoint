@@ -99,7 +99,7 @@ public class UserController {
 	 * @param id
 	 */
 	@DeleteMapping("/users/{id}")
-	public void deleteStudent(@PathVariable Integer id) {
+	public void deleteUser(@PathVariable Integer id) {
 		// Look for the user we want to update
 		Optional<User> userOptional = repository.findById(id);
 
