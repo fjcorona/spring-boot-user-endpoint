@@ -237,7 +237,7 @@ By default, spring boot reads the [_data.sql_](src/main/resources/data.sql) file
 It is as simple as declare `INSERT` queries with the table, the fields and the info we need:
 
 <details>
-<sumary></sumary>
+    <summary>___data.sql___</summary>
 
 ```sql
 INSERT INTO users (usr_id, usr_name, usr_lastname, usr_age, usr_active)
@@ -313,7 +313,7 @@ Besides that, the class has to have the getters and setters methods. They are no
 In this bean we use some annotations form `javax.persistence` package.
 
 <details>
-	<sumary></sumary>
+	<summary>___User.java___</summary>
 	
 ```java
 package com.fjcorona.springboot.user.endpoint.models;
@@ -420,6 +420,9 @@ We have this implementation in [_UserRepository.java_](src/main/java/com/fjcoron
 
 ![user-repository](pictures/repository/user-repository.png)
 
+<details>
+	<summary>___UserRepository.sql___</summary>
+
 ```java
 package com.fjcorona.springboot.user.endpoint.repositories;
 
@@ -449,6 +452,8 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 	Optional<User> findByActiveAndId(Integer active, Integer id);
 }
 ```
+
+</details>
 
 Spring Data JPA provides a repository programming model that starts with an interface per managed domain object.
 
@@ -639,6 +644,8 @@ The next we need is a Rest Controller, a class that helps us to interact with ou
 
 In the next section code, we can see only the structure, but we can find the whole implementation at [UserController.java](src/main/java/com/fjcorona/springboot/user/endpoint/controllers/UserController.java) file, in the same way we will see the code when we review method by method in the next sections.
 
+<details>
+	<summary>___UserController.sql___</summary>
 
 ```java
 package com.fjcorona.springboot.user.endpoint.controllers;
@@ -675,7 +682,7 @@ public class UserController {
 	public User updateUser(@RequestBody User user, @PathVariable Integer id) { /* ... */ }
 
 	@DeleteMapping("/users/{id}")
-	public void deleteStudent(@PathVariable Integer id) { /* ... */ }
+	public void deleteUser(@PathVariable Integer id) { /* ... */ }
 	
 	@GetMapping("/users-active")
 	public List<User> retriveAllActiveUsers() { /* ... */ }
@@ -698,6 +705,8 @@ public class UserController {
 	private User activeDeactiveUser(Integer id, Integer active) { /* ... */ }
 }
 ```
+
+</details>
 
 `@RestController` is a specialized version of the contorller. It includes the `@Controller` and `@ResponseBody` annotations and as a result, simplifies the controller implementation This way we can handle our REST requests.
 
@@ -755,6 +764,9 @@ public User createUser(@RequestBody User user) {
 
 ## _Update User_
 
+<details>
+	<summary>___updateUser___</summary>
+	
 ```java
 @PutMapping("/users/{id}")
 public User updateUser(@RequestBody User user, @PathVariable Integer id) {
@@ -779,13 +791,18 @@ public User updateUser(@RequestBody User user, @PathVariable Integer id) {
 }
 ```
 
+</details>
+
 [![go-up](pictures/go-up.png)](#menu)
 
 ## _Delete User_
 
+<details>
+	<summary>___deleteUser___</summary>
+
 ```java
 @DeleteMapping("/users/{id}")
-public void deleteStudent(@PathVariable Integer id) {
+public void deleteUser(@PathVariable Integer id) {
 	// Look for the user we want to update
 	Optional<User> userOptional = repository.findById(id);
 
@@ -796,6 +813,7 @@ public void deleteStudent(@PathVariable Integer id) {
 	}
 }
 ```
+</details>
 
 [![go-up](pictures/go-up.png)](#menu)
 
@@ -874,6 +892,9 @@ public User deactiveUser(@PathVariable Integer id) {
 }
 ```
 
+<details>
+	<summary>___activeDeactiveUser___</summary>
+
 ```java
 private User activeDeactiveUser(Integer id, Integer active) {
 	// Look for the user we want to update
@@ -900,6 +921,8 @@ private User activeDeactiveUser(Integer id, Integer active) {
 }
 ```
 
+</details>
+
 [![go-up](pictures/go-up.png)](#menu)
 
 # _Test Endpoints_
@@ -915,7 +938,7 @@ ___GET:___ `http:localhost/8080/users`
 As a result, we obtain all the users with whom we initialize our database. But this time in ___JSON___ format, through which it is simpler and more standard to establish communication with any application that could consume our service.
 
 <details>
-<sumary>Response</sumary>
+	<summary>___Response___</summary>
 
 ```json
 [
@@ -1078,6 +1101,9 @@ ___DELETE:___ `http:localhost/8080/users/`_`{{id}}`_
 
 ## _Get All Active Users_
 
+<details>
+	<summary>___Response___</summary>
+
 ```json
 [
     {
@@ -1138,6 +1164,8 @@ ___DELETE:___ `http:localhost/8080/users/`_`{{id}}`_
     }
 ]
 ```
+
+</details>
 
 [![go-up](pictures/go-up.png)](#menu)
 
