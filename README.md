@@ -54,9 +54,9 @@
 
 # _Introduction_
 
-This project is especially focused on beginners, for all those who just want to know a quick and simple way to create microservices in spring boot.
+This project is especially focused on beginners like me, for all those who just want to know a quick and simple way to create microservices in spring boot.
 
-Here is a small example in which you will be able to perform CRUD operations for users, as well as activate and deactivate them. All this in a very isolated way to a graphical interface, the way it will be done through endpoints with REST requests, which can be consumed from any application or client that has the capacity to consume them. We will test the endpoints with Postman.
+Here is a small example in which you will be able to perform CRUD operations for users, as well as activate and deactivate them. All this in a very isolated way to a graphical interface, the way it will be done is through endpoints with REST requests, which can be consumed from any application or client that has the capacity to consume them. We will test the endpoints with Postman.
 
 [![go-up](pictures/go-up.png)](#menu)
 
@@ -299,7 +299,7 @@ The definition of the files as `NOT NULL` or `PRIMARY KEY`are not from the SQL f
 
 # _Bean_
 
-Now we need a Bean, I mean, a Java class which will be mapped with the database `users` table. So well need such class with the same or similar name than the table, and properties related with the fields of the table. Of course we need a property by each field, with the same data types, and the same or similar name.
+Now we need a Bean, I mean, a Java class which will be mapped with the database `users` table. So we'll need such class with the same or similar name than the table, and properties related with the fields of the table. Of course we need a property by each field, with the same data types, and the same or similar name.
 
 Besides that, the class has to have the getters and setters methods. They are not included in the below definition of code. But you can find the complete code in [_User.java_](src/main/java/com/fjcorona/springboot/user/endpoint/models/User.java) file.
 
@@ -378,7 +378,7 @@ This way, ___name___ property knows that is mapped with ***usr_name*** field. An
 
 You might think that the best would be for the table to have the same name as the class and that the fields should also have the same name as the properties and thus avoid these two optional annotations in our code. And maybe that is the best solution, but the difference of names has been made purposely for didactic purposes.
 
-For this annotation there is another point that I would like to emphasize, you can see that in addition to name, another parameter `nullable = false` is being sent, this is what results in the fields of our temporary table being created as `NOT NULL`.
+For this annotation there is another point that I would like to emphasize, you can see that in addition to name, another parameter `nullable = false` is being set, this is what results in the fields of our temporary table being created as `NOT NULL`.
 
 [![go-up](pictures/go-up.png)](#menu)
 
@@ -594,7 +594,7 @@ WHERE
 
 ## _findByActiveAndId_
 
-In the same way that we can use method `findByXx`, JPA flexibility let us to acces to methods `findByXxAndYy` style.
+In the same way that we can use method `findByXx`, JPA flexibility let us to acces to methods `findByXxAndYy` style where `Xx` and `Yy` are two different fields from the table.
 
 This way we can access to the method _findByActiveAndId_ to be more specific an get one active or inactive user by the related id.
 
@@ -602,7 +602,7 @@ This way we can access to the method _findByActiveAndId_ to be more specific an 
 Optional<User> findByActiveAndId(Integer active, Integer id);
 ```
 
-The return type is an ***Optional***, if a user with that conditoons is found, a ___User___ entity will be retrived.
+The return type is an ***Optional***, if a user with that conditions is found, a ___User___ entity will be retrived.
 
 The internal query is:
 
@@ -625,9 +625,9 @@ AND
 
 # _User Controller_
 
-The next we need is a Rest Controller, a class that helps us to interact with our database by sending information from outside to inside, and getting it from the inside out, through REST requests.
+The next we need is a Rest Controller, a class that helps us to interact with our database by sending information from outside to inside, and getting it from the inside to outside, through REST requests.
 
-In tbhe next section code, we can see only the structure, but we can find the whole implementation at [UsersController.java](src/main/java/com/fjcorona/springboot/user/endpoint/controllers/UserController.java) file, in the same way we will see the code when we review method by method in the next sections.
+In the next section code, we can see only the structure, but we can find the whole implementation at [UserController.java](src/main/java/com/fjcorona/springboot/user/endpoint/controllers/UserController.java) file, in the same way we will see the code when we review method by method in the next sections.
 
 
 ```java
@@ -697,7 +697,7 @@ Every request handling method of the controller class automatically serializes r
 
 ## _Get All Users_
 
-This is maybe, the easiest implemented request, the only thing we need to do is call the [___findAll___](#findall) method form our repository and return wherever result we get, without further validation, beacuse in the worst of the cases we will get an empty array, in case all goes well we'll get an array of all users. We eill see the result wen test the methods
+This is maybe, the easiest implemented request, the only thing we need to do is call the [___findAll___](#findall) method from our repository and return wherever result we get, without further validation, beacuse in the worst of the cases we will get an empty array, in case all goes well we'll get an array of all users. We will see the result when test the methods
 
 ```java
 @GetMapping("/users")
@@ -978,6 +978,8 @@ As a result, we obtain all the users with whom we initialize our database. But t
     }
 ]
 ```
+
+You can see that the names of the JSON properties correspond to those of the class defined as an entity.
 
 [![go-up](pictures/go-up.png)](#menu)
 
