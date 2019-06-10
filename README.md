@@ -236,6 +236,9 @@ By default, spring boot reads the [_data.sql_](src/main/resources/data.sql) file
 
 It is as simple as declare `INSERT` queries with the table, the fields and the info we need:
 
+<details>
+<sumary></sumary>
+
 ```sql
 INSERT INTO users (usr_id, usr_name, usr_lastname, usr_age, usr_active)
 VALUES (10001, 'Javier', 'Corona', 30, 1);
@@ -258,6 +261,8 @@ VALUES (10009, 'Pantaleón', 'Pérez', 23, 1);
 INSERT INTO users (usr_id, usr_name, usr_lastname, usr_age, usr_active)
 VALUES (10010, 'Serafino', 'Arriaga', 44, 1);
 ```
+
+</details>
 
 I want to mention a particular field in the table, I'm talking about ***usr_active***, its purpose is to work as a kind of boolean value, where:
 
@@ -307,6 +312,9 @@ Besides that, the class has to have the getters and setters methods. They are no
 
 In this bean we use some annotations form `javax.persistence` package.
 
+<details>
+	<sumary></sumary>
+	
 ```java
 package com.fjcorona.springboot.user.endpoint.models;
 
@@ -346,7 +354,9 @@ public class User {
 	 * /
 
 }
-```
+```	
+	
+</details>
 
 [![go-up](pictures/go-up.png)](#menu)
 
@@ -904,6 +914,9 @@ ___GET:___ `http:localhost/8080/users`
 
 As a result, we obtain all the users with whom we initialize our database. But this time in ___JSON___ format, through which it is simpler and more standard to establish communication with any application that could consume our service.
 
+<details>
+<sumary>Response</sumary>
+
 ```json
 [
     {
@@ -978,6 +991,8 @@ As a result, we obtain all the users with whom we initialize our database. But t
     }
 ]
 ```
+
+</details>
 
 You can see that the names of the JSON properties correspond to those of the class defined as an entity.
 
