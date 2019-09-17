@@ -313,7 +313,7 @@ Besides that, the class has to have the getters and setters methods. They are no
 In this bean we use some annotations form `javax.persistence` package.
 
 <details>
-	<summary>___User.java___</summary>
+	<summary>User.java</summary>
 	
 ```java
 package com.fjcorona.springboot.user.endpoint.models;
@@ -377,7 +377,7 @@ This way ___User___ class knows that is mapped with ***users*** table.
 
 ## _Column_
 
-In the same way table's columns are derived from entities properties, so by default JPA will look for the names of your properties as fields of the table you indicate the Entity it is. As you can see, in the database the fields names has an **usr_** prefix that the class properties don't have, son we need the `@Column` annotation to explicity indicate property by property which field tables will be linked with.
+In the same way table's columns are derived from entities properties, so by default JPA will look for the names of your properties as fields of the table you indicate the Entity it is. As you can see, in the database the fields names has an **usr_** prefix that the class properties don't have, so we need the `@Column` annotation to explicity indicate property by property which field tables will be linked with.
 
 ```java
 @Column(name = "usr_name", nullable = false)
@@ -398,7 +398,7 @@ The `@Id` annotation is inherited from `javax.persistence.Id` indicating the mem
 
 The `@GeneratedValue` annotation is to configure the way of increment of the specified ___primary key___.
 
-The `GenerationType.IDENTITY` is the easiest strategy to use. It relies on an auto-incremented database column and lets the database generate a new value with each insert operation.
+The `GenerationType.IDENTITY` is the easiest strategy to use. It relies on an _auto-incremented_ database column and lets the database generate a new value with each insert operation.
 
 This both annotations together, will supplies us with and ___id___ autoincremental primary key:
 
@@ -408,7 +408,7 @@ This both annotations together, will supplies us with and ___id___ autoincrement
 @Column(name = "usr_id", nullable = false)
 private Integer id;
 ```
-An they both are the reason osf the primary key in create quey we've seen before.
+An they both are the reason of the primary key in create quey we've seen before.
 
 Something we have to consider and never forget is that the `@Entity` annotation, together with `@Id` annotation is the minimum we need in order to create an entity.
 
@@ -421,7 +421,7 @@ We have this implementation in [_UserRepository.java_](src/main/java/com/fjcoron
 ![user-repository](pictures/repository/user-repository.png)
 
 <details>
-	<summary>___UserRepository.sql___</summary>
+	<summary>UserRepository.sql</summary>
 
 ```java
 package com.fjcorona.springboot.user.endpoint.repositories;
@@ -585,7 +585,7 @@ DELETE
 
 JPA provides us with the ability to know what properties our entity has, and from them, our repository can access methods like `findByXx`, where `Xx` represents the name of any of our entity properties.
 
-Taking advantage of this flexibility, we use the `findByActive` method which will bring us a list of all ___User___ instances, active or inactive, depending on the value that the method receives (0 = Active, 1 = Inactive).
+Taking advantage of this flexibility, we use the `findByActive` method which will bring us a list of all ___User___ instances, active or inactive, depending on the value that the method receives (1 = Active, 0 = Inactive).
 
 ```java
 public List<User> findByActive(Integer active);
@@ -645,7 +645,7 @@ The next we need is a Rest Controller, a class that helps us to interact with ou
 In the next section code, we can see only the structure, but we can find the whole implementation at [UserController.java](src/main/java/com/fjcorona/springboot/user/endpoint/controllers/UserController.java) file, in the same way we will see the code when we review method by method in the next sections.
 
 <details>
-	<summary>___UserController.sql___</summary>
+	<summary>UserController.sql</summary>
 
 ```java
 package com.fjcorona.springboot.user.endpoint.controllers;
@@ -708,7 +708,7 @@ public class UserController {
 
 </details>
 
-`@RestController` is a specialized version of the contorller. It includes the `@Controller` and `@ResponseBody` annotations and as a result, simplifies the controller implementation This way we can handle our REST requests.
+`@RestController` is a specialized version of the controller. It includes the `@Controller` and `@ResponseBody` annotations and as a result, simplifies the controller implementation This way we can handle our REST requests.
 
 Every request handling method of the controller class automatically serializes return objects into _HttpResponse_. This way we can send and return _JSON_ information without add any other annotation.
 
@@ -765,7 +765,7 @@ public User createUser(@RequestBody User user) {
 ## _Update User_
 
 <details>
-	<summary>___updateUser___</summary>
+	<summary>updateUser</summary>
 	
 ```java
 @PutMapping("/users/{id}")
@@ -798,7 +798,7 @@ public User updateUser(@RequestBody User user, @PathVariable Integer id) {
 ## _Delete User_
 
 <details>
-	<summary>___deleteUser___</summary>
+	<summary>deleteUser</summary>
 
 ```java
 @DeleteMapping("/users/{id}")
@@ -893,7 +893,7 @@ public User deactiveUser(@PathVariable Integer id) {
 ```
 
 <details>
-	<summary>___activeDeactiveUser___</summary>
+	<summary>activeDeactiveUser</summary>
 
 ```java
 private User activeDeactiveUser(Integer id, Integer active) {
@@ -938,7 +938,7 @@ ___GET:___ `http:localhost/8080/users`
 As a result, we obtain all the users with whom we initialize our database. But this time in ___JSON___ format, through which it is simpler and more standard to establish communication with any application that could consume our service.
 
 <details>
-	<summary>___Response___</summary>
+	<summary>Response</summary>
 
 ```json
 [
@@ -1102,7 +1102,7 @@ ___DELETE:___ `http:localhost/8080/users/`_`{{id}}`_
 ## _Get All Active Users_
 
 <details>
-	<summary>___Response___</summary>
+	<summary>Response</summary>
 
 ```json
 [
