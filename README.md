@@ -90,7 +90,7 @@ The default port in which a Spring Boot application runs is ___8080___. In the c
 server.port=8888
 ```
 
-I've selected the ___8888___ port, this way, my microservice will run in the next URL:
+I've selected the ___8888___ port, this way, my microservices will run in the next URL:
 
 [_http://localhost:8888_](http://localhost:8888)
 
@@ -116,7 +116,7 @@ This property works together with the previous property, because although, the p
 spring.jpa.properties.hibernate.format_sql=true
 ```
 
-In the same way, this property by default is false, so we have to set as true.
+In the same way, this property by default is false, so we have to set it as true.
 
 Later we will see some examples of both properties working together.
 
@@ -237,7 +237,7 @@ By default, spring boot reads the [_data.sql_](src/main/resources/data.sql) file
 It is as simple as declare `INSERT` queries with the table, the fields and the info we need:
 
 <details>
-    <summary>___data.sql___</summary>
+    <summary>data.sql</summary>
 
 ```sql
 INSERT INTO users (usr_id, usr_name, usr_lastname, usr_age, usr_active)
