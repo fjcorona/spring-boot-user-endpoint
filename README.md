@@ -1,6 +1,7 @@
 # Quick Usage Guide
 
-[_GUIDE.md_](GUIDE.md)
+This is a brief and simple introduction about the scripts that must be executed to carry out the basic processes to start, stop and restart this project.
+For a deeper and more detailed explanation about how the project was built, please refer to [_this guide_](GUIDE.md).
 
 ## Start
 
@@ -21,7 +22,6 @@ To stop the project, open another terminal different than the one in which the p
 ## Restart
 
 If you want to restart the process once started, you must open a new terminal and execute the following command to execute the corresponding script:
-
 
 ```
 ./restart.sh
