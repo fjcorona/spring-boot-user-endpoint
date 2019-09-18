@@ -44,20 +44,20 @@
 					"response": []
 				},
 				{
-					"name": "Create User",
+					"name": "Add User",
 					"request": {
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
 								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"type": "text",
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Romina\",\n\t\"lastname\": \"Bautista\",\n\t\"age\": 25\n}",
+							"raw": "{\n\t\"name\": \"Seferino\",\n\t\"lastname\": \"Gabriel\",\n\t\"age\": 60\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -90,7 +90,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Francisco\",\n\t\"lastname\": \"Crown\",\n\t\"age\": 30\n}",
+							"raw": "{\n\t\"name\": \"Mr. Javo\",\n\t\"lastname\": \"Crown\",\n\t\"age\": 30\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -111,7 +111,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete User By Id",
+					"name": "Delete User",
 					"request": {
 						"method": "DELETE",
 						"header": [],
