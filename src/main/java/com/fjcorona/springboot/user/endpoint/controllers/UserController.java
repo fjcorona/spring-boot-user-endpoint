@@ -43,7 +43,7 @@ public class UserController {
 	 * @param id
 	 * @return
 	 */
-	@GetMapping("/users/{id}")
+	@GetMapping("/user/{id}")
 	public User retriveOneUserById(@PathVariable Integer id) {
 		// Look for the specific User
 		Optional<User> user = repository.findById(id);
@@ -56,7 +56,7 @@ public class UserController {
 	 * @param user
 	 * @return
 	 */
-	@PostMapping("/users")
+	@PostMapping("/user")
 	public User createUser(@RequestBody User user) {
 		// By default a new user is active
 		user.setActive(1);
@@ -72,7 +72,7 @@ public class UserController {
 	 * @param id
 	 * @return
 	 */
-	@PutMapping("/users/{id}")
+	@PutMapping("/user/{id}")
 	public User updateUser(@RequestBody User user, @PathVariable Integer id) {
 		// Look for the user we want to update
 		Optional<User> userOptional = repository.findById(id);
@@ -98,7 +98,7 @@ public class UserController {
 	 * 
 	 * @param id
 	 */
-	@DeleteMapping("/users/{id}")
+	@DeleteMapping("/user/{id}")
 	public void deleteUser(@PathVariable Integer id) {
 		// Look for the user we want to update
 		Optional<User> userOptional = repository.findById(id);
@@ -127,7 +127,7 @@ public class UserController {
 	 * @param id
 	 * @return
 	 */
-	@GetMapping("/users-active/{id}")
+	@GetMapping("/user-active/{id}")
 	public User retriveOneActiveUserById(@PathVariable Integer id) {
 		// Look for the active user related wit the received id
 		Optional<User> user = repository.findByActiveAndId(1, id);
@@ -152,7 +152,7 @@ public class UserController {
 	 * @param id
 	 * @return
 	 */
-	@GetMapping("/users-inactive/{id}")
+	@GetMapping("/user-inactive/{id}")
 	public User retriveOneInactiveUserById(@PathVariable Integer id) {
 		// Look for the inactive user related wit the received id
 		Optional<User> user = repository.findByActiveAndId(0, id);
@@ -165,7 +165,7 @@ public class UserController {
 	 * @param id
 	 * @return
 	 */
-	@PutMapping("/users/active/{id}")
+	@PutMapping("/user/active/{id}")
 	public User activeUser(@PathVariable Integer id) {
 		// Active user with the received id
 		return this.activeDeactiveUser(id, 1);
@@ -176,7 +176,7 @@ public class UserController {
 	 * @param id
 	 * @return
 	 */
-	@PutMapping("/users/deactive/{id}")
+	@PutMapping("/user/deactive/{id}")
 	public User deactiveUser(@PathVariable Integer id) {
 		// Deactive user with the received id
 		return this.activeDeactiveUser(id, 0);
