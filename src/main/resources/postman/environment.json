@@ -1,21 +1,19 @@
 {
-	"id": "16b96504-4c62-4003-87c0-1b189d0a339c",
-	"name": "Rest User Spring Boot - Env",
+	"id": "090b6e4f-2aff-44d9-bd57-3a5001e47dea",
+	"name": "Spring Boot User Endpoint - Env",
 	"values": [
 		{
 			"key": "host",
 			"value": "http://localhost:8888",
-			"description": "",
 			"enabled": true
 		},
 		{
 			"key": "id",
 			"value": "10001",
-			"description": "",
 			"enabled": true
 		}
 	],
 	"_postman_variable_scope": "environment",
-	"_postman_exported_at": "2019-05-30T20:47:01.564Z",
-	"_postman_exported_using": "Postman/6.7.4"
+	"_postman_exported_at": "2019-09-18T15:35:57.488Z",
+	"_postman_exported_using": "Postman/7.7.2"
 }
