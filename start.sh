@@ -15,3 +15,5 @@ echo "Project environment started"
 echo "Log at project.log"
 
 touch project-started
+
+tail -f ./project.log
