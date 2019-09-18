@@ -1086,7 +1086,7 @@ ___RESPONSE:___
     "name": "Mr. Javo",
     "lastname": "Crown",
     "age": 30,
-    "active": 0
+    "active": 1
 }
 ```
 
