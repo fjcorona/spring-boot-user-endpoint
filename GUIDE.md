@@ -645,7 +645,7 @@ The next we need is a Rest Controller, a class that helps us to interact with ou
 In the next section code, we can see only the structure, but we can find the whole implementation at [UserController.java](src/main/java/com/fjcorona/springboot/user/endpoint/controllers/UserController.java) file, in the same way we will see the code when we review method by method in the next sections.
 
 <details>
-	<summary>UserController.sql</summary>
+	<summary>UserController.java</summary>
 
 ```java
 package com.fjcorona.springboot.user.endpoint.controllers;
@@ -728,7 +728,7 @@ public List<User> retriveAllUsers() {
 }
 ```
 
-By annotating method with `@GetMapping("/users")` we define a GET request at [___`http:localhost/8080/users`___](http:localhost/8080/users)
+By annotating method with `@GetMapping("/users")` we define a GET request at [___`http:localhost/8888/users`___](http:localhost/8888/users)
 
 [![go-up](pictures/go-up.png)](#menu)
 
@@ -933,7 +933,7 @@ private User activeDeactiveUser(Integer id, Integer active) {
 
 We just consume the next endpoint
 
-___GET:___ `http:localhost/8080/users`
+___GET:___ `http:localhost/8888/users`
 
 As a result, we obtain all the users with whom we initialize our database. But this time in ___JSON___ format, through which it is simpler and more standard to establish communication with any application that could consume our service.
 
@@ -1023,7 +1023,7 @@ You can see that the names of the JSON properties correspond to those of the cla
 
 ## _Get User By Id_
 
-___GET:___ `http:localhost/8080/users/`_`{{id}}`_
+___GET:___ `http:localhost/8888/users/`_`{{id}}`_
 
 ```json
 {
@@ -1039,7 +1039,7 @@ ___GET:___ `http:localhost/8080/users/`_`{{id}}`_
 
 ## _Add User_
 
-___POST:___ `http:localhost/8080/users`
+___POST:___ `http:localhost/8888/users`
 
 ___BODY REQUEST:___
 
@@ -1066,7 +1066,7 @@ ___RESPONSE:___
 
 ## _Update User_
 
-___PUT:___ `http:localhost/8080/users/`_`{{id}}`_
+___PUT:___ `http:localhost/8888/users/`_`{{id}}`_
 
 ___BODY REQUEST:___
 
@@ -1095,7 +1095,7 @@ ___RESPONSE:___
 ## _Delete User_
 
 
-___DELETE:___ `http:localhost/8080/users/`_`{{id}}`_
+___DELETE:___ `http:localhost/8888/users/`_`{{id}}`_
 
 [![go-up](pictures/go-up.png)](#menu)
 
