@@ -1,2 +1,17 @@
 #!/usr/bin/env bash
-#mvn spring-boot:stop;
+
+echo "Stopping project environment"
+
+if [[ "$OSTYPE" == "cygwin" ]]; then
+  taskkill /IM "java.exe" /F
+  taskkill /IM "node.exe" /F
+fi
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  killall java
+fi
+
+rm project-started
+
+echo "Project environment fully stopped"
+
