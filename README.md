@@ -1,5 +1,7 @@
 # Quick Usage Guide
 
+[_GUIDE.md_](GUIDE.md)
+
 ## Start
 
 ```
