@@ -6,7 +6,7 @@ if [ -f "project-started" ]; then
   exit 0
 fi
 
-echo "Starting code it environment"
+echo "Starting project environment"
 
 mvn clean install package > ./project.log
 mvn spring-boot:run > ./project.log
