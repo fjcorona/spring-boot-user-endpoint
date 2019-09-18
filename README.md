@@ -1,6 +1,9 @@
 # Quick Usage Guide
 
 This is a brief and simple introduction about the scripts that must be executed to carry out the basic processes to start, stop and restart this project.
+
+This guide is totally independent of any code editor. If you prefer and your IDE allows it, you can take advantage of the options to execute these procedures.
+
 For a deeper and more detailed explanation about how the project was built, please refer to [_this guide_](GUIDE.md).
 
 ## Start
