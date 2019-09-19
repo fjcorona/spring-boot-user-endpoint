@@ -758,7 +758,7 @@ public User retriveOneUserById(@PathVariable Integer id) {
 }
 ```
 
-Once in the method, [***findById***](#findById) method is called with the received id. Remember that the expected value is an optional. If the user was found, we will return the instance from the optional, otherwise a new _`User`_ instance with __*null*__ values ​​will be returned. Later personalized responses will be returned for these cases.
+Once in the method, [***findById***](#findById) method is called with the received id. Remember that the expected value is an optional. If the user was found, we will return the instance from the optional, otherwise a new _`User`_ instance with __*null*__ values ​​will be returned. Later custom responses will be returned for these cases.
 
 
 [![go-up](pictures/go-up.png)](#menu)
