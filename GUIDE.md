@@ -734,6 +734,20 @@ By annotating method with `@GetMapping("/users")` we define a GET request at [__
 
 ## _Get User By Id_
 
+If what you want is to obtain a particular user, all you have to do is send the corresponding id to the user we are looking for through the url:
+
+[___`http:localhost/8888/user/{id}`___](http:localhost/8888/user/{id})
+
+Once again the annotation `@GetMapping` is responsible for defining our GET request, but now we indicate that our URL will receive the user's id, and that it'll also change dynamically according to the user we are looking for.
+
+The way to indicate in the route that we will receive a variable value is by putting it between curly braces. In this way, the URL pattern knows that there is a dynamically changing value.
+
+As we can see each URL has a method handler. There we must declare a parameter with the same name as in the URL where we indicate the type of expected data, in addition to annotating it with `@PathVariable`, this way the method knows that _`id`_ receives the value from _`{id}`_ at URL.
+
+In this way, if for example, we search for the user with id _`10001`_, our route would be:
+
+[___`http:localhost/8888/user/10001`___](http:localhost/8888/user/10001)
+
 ```java
 @GetMapping("/users/{id}")
 public User retriveOneUserById(@PathVariable Integer id) {
@@ -743,6 +757,9 @@ public User retriveOneUserById(@PathVariable Integer id) {
 	return (user.isPresent()) ? user.get() : new User();
 }
 ```
+
+Once in the method, [***findById***](#findById) method is called with the received id. Remember that the expected value is an optional. If the user was found, we will return the instance from the optional, otherwise a new User instance with null values ​​will be returned. Later personalized responses will be returned for these cases.
+
 
 [![go-up](pictures/go-up.png)](#menu)
 
