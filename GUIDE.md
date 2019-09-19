@@ -291,9 +291,9 @@ CREATE TABLE users (
 )
 ```
 
-We can check it with the following screenshot of the log, where we can see how the table is created using ___Hibernate___
+We can check it with the following screenshot of the log, where we can see how the table is created using ___Hibernate___.
 
-Remember we can see it due to `spring.jpa.show-sql` and `spring.jpa.show-sql` has been set as _true_.
+Remember we can see it due to `spring.jpa.show-sql` and `spring.jpa.properties.hibernate.format_sql` has been set as _true_.
 
 ![create-hibernate](pictures/database/create-hibernate.png)
 
