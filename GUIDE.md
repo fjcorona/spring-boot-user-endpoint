@@ -795,6 +795,7 @@ The update's case is very similar create one, we'll also receive the user data (
 
 Thanks to the `@PutMapping` annotation, the following PUT HTTP Request is available: [___`http:localhost/8888/user/{id}`___](http:localhost/8888/user/{id}).
 
+<details>
 	<summary>updateUser</summary>
 	
 ```java
