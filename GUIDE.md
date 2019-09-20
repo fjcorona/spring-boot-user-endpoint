@@ -673,34 +673,34 @@ public class UserController {
 	@GetMapping("/users")
 	public List<User> retriveAllUsers() { /* ... */ }
 	
-	@GetMapping("/users/{id}") { /* ... */ }
+	@GetMapping("/user/{id}") { /* ... */ }
 	
-	@PostMapping("/users")
+	@PostMapping("/user")
 	public User createUser(@RequestBody User user) { /* ... */ }
 	
-	@PutMapping("/users/{id}")
+	@PutMapping("/user/{id}")
 	public User updateUser(@RequestBody User user, @PathVariable Integer id) { /* ... */ }
 
-	@DeleteMapping("/users/{id}")
+	@DeleteMapping("/user/{id}")
 	public void deleteUser(@PathVariable Integer id) { /* ... */ }
 	
 	@GetMapping("/users-active")
 	public List<User> retriveAllActiveUsers() { /* ... */ }
 	
-	@GetMapping("/users-active/{id}")
+	@GetMapping("/user-active/{id}")
 	public User retriveOneActiveUserById(@PathVariable Integer id) { /* ... */ }
 	
 	@GetMapping("/users-inactive")
 	public List<User> retriveAllInactiveUsers() { /* ... */ }
 	
-	@GetMapping("/users-inactive/{id}")
+	@GetMapping("/user-inactive/{id}")
 	public User retriveOneInActiveUserById(@PathVariable Integer id) { /* ... */ }
 		
-	@PutMapping("/users/active/{id}")
+	@PutMapping("/user/active/{id}")
 	public User activeUser(@PathVariable Integer id) { /* ... */ }
 	
-	@PutMapping("/users/deactive/{id}")
-	public User deactiveUser(@PathVariable Integer id) { /* ... */ }
+	@PutMapping("/user/inactive/{id}")
+	public User inactiveUser(@PathVariable Integer id) { /* ... */ }
 
 	private User activeDeactiveUser(Integer id, Integer active) { /* ... */ }
 }
@@ -749,7 +749,7 @@ In this way, if for example, we search for the user with id _`10001`_, our route
 [___`http:localhost/8888/user/10001`___](http:localhost/8888/user/10001)
 
 ```java
-@GetMapping("/users/{id}")
+@GetMapping("/user/{id}")
 public User retriveOneUserById(@PathVariable Integer id) {
 	// Look for the specific User
 	Optional<User> user = repository.findById(id);
@@ -770,7 +770,7 @@ To create a new user it's necessary to use an HTTP Request POST type at URL [___
 This URL will receive an object with the user data that we want to add: name, lastname and age. For this purpose the handler method receives a user object of type _`User`_, annotated with `@RequestBody`.
 
 ```java
-@PostMapping("/users")
+@PostMapping("/user")
 public User createUser(@RequestBody User user) {
 	// By default a new user is active
 	user.setActive(1);
@@ -795,7 +795,7 @@ Once the object is prepared, we send it to the [***save***](#with-null-id) metho
 	<summary>updateUser</summary>
 	
 ```java
-@PutMapping("/users/{id}")
+@PutMapping("/user/{id}")
 public User updateUser(@RequestBody User user, @PathVariable Integer id) {
 	// Look for the user we want to update
 	Optional<User> userOptional = repository.findById(id);
@@ -828,7 +828,7 @@ public User updateUser(@RequestBody User user, @PathVariable Integer id) {
 	<summary>deleteUser</summary>
 
 ```java
-@DeleteMapping("/users/{id}")
+@DeleteMapping("/user/{id}")
 public void deleteUser(@PathVariable Integer id) {
 	// Look for the user we want to update
 	Optional<User> userOptional = repository.findById(id);
@@ -861,7 +861,7 @@ public List<User> retriveAllActiveUsers() {
 ## _Get Active User By Id_
 
 ```java
-@GetMapping("/users-active/{id}")
+@GetMapping("/user-active/{id}")
 public User retriveOneActiveUserById(@PathVariable Integer id) {
 	// Look for the active user related wit the received id
 	Optional<User> user = repository.findByActiveAndId(1, id);
@@ -889,7 +889,7 @@ public List<User> retriveAllInactiveUsers() {
 ## _Get Inactive User By Id_
 
 ```java
-@GetMapping("/users-inactive/{id}")
+@GetMapping("/user-inactive/{id}")
 public User retriveOneInactiveUserById(@PathVariable Integer id) {
 	// Look for the inactive user related wit the received id
 	Optional<User> user = repository.findByActiveAndId(0, id);
@@ -904,7 +904,7 @@ public User retriveOneInactiveUserById(@PathVariable Integer id) {
 ## _Activate/Deactivate User_
 
 ```java
-@PutMapping("/users/active/{id}")
+@PutMapping("/user/active/{id}")
 public User activeUser(@PathVariable Integer id) {
 	// Active user with the received id
 	return this.activeDeactiveUser(id, 1);
@@ -912,18 +912,18 @@ public User activeUser(@PathVariable Integer id) {
 ```
 
 ```java
-@PutMapping("/users/deactive/{id}")
-public User deactiveUser(@PathVariable Integer id) {
+@PutMapping("/user/inactive/{id}")
+public User inactiveUser(@PathVariable Integer id) {
 	// Deactive user with the received id
 	return this.activeDeactiveUser(id, 0);
 }
 ```
 
 <details>
-	<summary>activeDeactiveUser</summary>
+	<summary>activeInactiveUser</summary>
 
 ```java
-private User activeDeactiveUser(Integer id, Integer active) {
+private User activeInactiveUser(Integer id, Integer active) {
 	// Look for the user we want to update
 	Optional<User> userOptional = repository.findById(id);
 
