@@ -791,7 +791,10 @@ Once the object is prepared, we send it to the [***save***](#with-null-id) metho
 
 ## _Update User_
 
-<details>
+The update's case is very similar create one, we'll also receive the user data (name, lastname, age), but this time we'll also receive a parameter in the URL, which indicates the id of the user which we want to update.
+
+Thanks to the `@PutMapping` annotation, the following PUT HTTP Request is available: [___`http:localhost/8888/user/{id}`___](http:localhost/8888/user/{id}).
+
 	<summary>updateUser</summary>
 	
 ```java
@@ -817,8 +820,19 @@ public User updateUser(@RequestBody User user, @PathVariable Integer id) {
 	return savedUser;
 }
 ```
-
 </details>
+
+Handler method has two parameters, the first one is our User object annotated with `@RequestBody` to indicate that the data will be received in the body of our HTTP request. The second one is our id annotated with `@PathVariable` indicating that it'll arrive as part of the URL.
+
+Once inside, the first thing that is done is to validate that the user we want to update, does actually exist. For this we rely on the method [***findById***](#findById).
+
+If as outcome we don't get any user, it means that there is nothing to do and we return a new instance with _`null`_ values ​​to indicate that user was not found. A customized response will be implemented in future versions of the project.
+
+If it was found, we'll modify the User we received in request body, assigning the _`id`_ from the URL, in this way [***save***](#with-not-null-id) method, upon receiving a _`not null`_ id, will know that it has to update the user and not create a new one.
+
+In the case of _`active`_ property, this time we cannot give it a default value but we take whatever the user found has.
+
+As a result, our endpoint will return a user object with the updated data.
 
 [![go-up](pictures/go-up.png)](#menu)
 
