@@ -912,18 +912,18 @@ public User activeUser(@PathVariable Integer id) {
 ```
 
 ```java
-@PutMapping("/user/inactive/{id}")
-public User inactiveUser(@PathVariable Integer id) {
+@PutMapping("/user/deactive/{id}")
+public User deactiveUser(@PathVariable Integer id) {
 	// Deactive user with the received id
 	return this.activeDeactiveUser(id, 0);
 }
 ```
 
 <details>
-	<summary>activeInactiveUser</summary>
+	<summary>activeDeactiveUser</summary>
 
 ```java
-private User activeInactiveUser(Integer id, Integer active) {
+private User activeDeactiveUser(Integer id, Integer active) {
 	// Look for the user we want to update
 	Optional<User> userOptional = repository.findById(id);
 
