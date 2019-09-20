@@ -823,7 +823,7 @@ public User updateUser(@RequestBody User user, @PathVariable Integer id) {
 ```
 </details>
 
-Handler method has two parameters, the first one is our User object annotated with `@RequestBody` to indicate that the data will be received in the body of our HTTP request. The second one is our id annotated with `@PathVariable` indicating that it'll arrive as part of the URL.
+Handler method has two parameters, the first one is our _`User`_ object annotated with `@RequestBody` to indicate that the data will be received in the body of our HTTP request. The second one is our _`id`_ annotated with `@PathVariable` indicating that it'll arrive as part of the URL.
 
 Once inside, the first thing that is done is to validate that the user we want to update, does actually exist. For this we rely on the method [***findById***](#findById).
 
