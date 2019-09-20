@@ -400,7 +400,7 @@ The `@GeneratedValue` annotation is to configure the way of increment of the spe
 
 The `GenerationType.IDENTITY` is the easiest strategy to use. It relies on an _auto-incremented_ database column and lets the database generate a new value with each insert operation.
 
-This both annotations together, will supplies us with and ___id___ autoincremental primary key:
+This both annotations together, will supply us with and ___id___ autoincremental primary key:
 
 ```java
 @Id
