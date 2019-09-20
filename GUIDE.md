@@ -765,7 +765,7 @@ Once in the method, [***findById***](#findById) method is called with the receiv
 
 ## _Create User_
 
-To create a new user it's necessary to use a HTTP Request POST type at URL [___`http:localhost/8888/user`___](http:localhost/8888/user), this is achieved thanks to the `@PostMapping` annotation.
+To create a new user it's necessary to use an HTTP Request POST type at URL [___`http:localhost/8888/user`___](http:localhost/8888/user), this is achieved thanks to the `@PostMapping` annotation.
 
 This URL will receive an object with the user data that we want to add: name, lastname and age. For this purpose the handler method receives a user object of type _`User`_, annotated with `@RequestBody`.
 
