@@ -54,7 +54,7 @@
 
 # _Introduction_
 
-This project is especially focused on beginners like me, for all those who just want to know a quick and simple way to create microservices in spring boot.
+This project is especially focused on beginners like me, for all those who just want to know a quick and simple way to create microservices with Spring Boot.
 
 Here is a small example in which you will be able to perform CRUD operations for users, as well as activate and deactivate them. All this in a very isolated way to a graphical interface, the way it will be done is through endpoints with REST requests, which can be consumed from any application or client that has the capacity to consume them. We will test the endpoints with Postman.
 
