@@ -825,7 +825,7 @@ public User updateUser(@RequestBody User user, @PathVariable Integer id) {
 
 Handler method has two parameters, the first one is our _`User`_ object annotated with `@RequestBody` to indicate that the data will be received in the body of our HTTP request. The second one is our _`id`_ annotated with `@PathVariable` indicating that it'll arrive as part of the URL.
 
-Once inside, the first thing that is done is to validate that the user we want to update, does actually exist. For this we rely on the method [***findById***](#findById).
+Once inside, the first thing that is done is to validate that the user we want to update, does actually exist. For this we use the [***findById***](#findById) method.
 
 If as outcome we don't get any user, it means that there is nothing to do and we return a new instance with _`null`_ values ​​to indicate that user was not found. A customized response will be implemented in future versions of the project.
 
