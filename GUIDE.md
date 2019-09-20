@@ -781,7 +781,7 @@ public User createUser(@RequestBody User user) {
 }
 ```
 
-I'm pretty sure you had noticed that, previously, when mentioning the user data that would be saved, neither ___id___ nor *__active__* ere mentioned.
+I'm pretty sure you had noticed that, previously, when mentioning the user data that would be saved, neither ___id___ nor *__active__* were mentioned.
 
 When you want to save a new user, by default it will be **active**, therefore, it is not necessary to receive such property, but we directly do _`user.setActive(1)`_ to save it as an active.
 
