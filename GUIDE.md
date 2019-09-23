@@ -916,6 +916,12 @@ In case an active user is found, the method returns it, otherwise a new user wit
 
 ## _Get All Inactive Users_
 
+The next GET endpoint:
+
+http://localhost:8888/users-inactive
+
+Retrieves all inactive and just the inactive users. Internally, method handler performances the same that the used by [***Get All Active Users***](#get-all-active-users), the only difference is that the [***findByActive***](#findByActive) method is called with ___0___ as argument.
+
 ```java
 @GetMapping("/users-inactive")
 public List<User> retriveAllInactiveUsers() {
