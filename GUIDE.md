@@ -1144,7 +1144,7 @@ ___GET:___ `http://localhost:8888/user/10000`
 
 ## _Add User_
 
-___POST:___ `http://localhost:8888/users`
+___POST:___ `http://localhost:8888/user`
 
 ___BODY REQUEST:___
 
@@ -1171,7 +1171,7 @@ ___RESPONSE:___
 
 ## _Update User_
 
-___PUT:___ `http://localhost:8888/users/`_`{{id}}`_
+___PUT:___ `http://localhost:8888/user/10001`_
 
 ___BODY REQUEST:___
 
@@ -1187,7 +1187,7 @@ ___RESPONSE:___
 
 ```json
 {
-    "id": 10003,
+    "id": 10001,
     "name": "Mr. Javo",
     "lastname": "Crown",
     "age": 30,
@@ -1199,25 +1199,19 @@ ___RESPONSE:___
 
 ## _Delete User_
 
-
-___DELETE:___ `http://localhost:8888/users/`_`{{id}}`_
+___DELETE:___ `http://localhost:8888/user/10001`
 
 [![go-up](pictures/go-up.png)](#menu)
 
 ## _Get All Active Users_
+
+___GET:___ `http://localhost:8888/users-active`
 
 <details>
 	<summary>Response</summary>
 
 ```json
 [
-    {
-        "id": 10001,
-        "name": "Javier",
-        "lastname": "Corona",
-        "age": 30,
-        "active": 1
-    },
     {
         "id": 10002,
         "name": "Francisco",
@@ -1275,6 +1269,30 @@ ___DELETE:___ `http://localhost:8888/users/`_`{{id}}`_
 [![go-up](pictures/go-up.png)](#menu)
 
 ## _Get Active User By ID_
+
+___GET:___ `http://localhost:8888/user-active/10002`
+
+```json
+{
+	"id": 10002,
+	"name": "Francisco",
+	"lastname": "Sánchez",
+	"age": 29,
+	"active": 1
+}
+```
+
+___GET:___ `http://localhost:8888/user-active/10003`
+
+```json
+{
+	"id": null,
+	"name": null,
+	"lastname": null,
+	"age": null,
+	"active": null
+}
+```
 
 [![go-up](pictures/go-up.png)](#menu)
 
