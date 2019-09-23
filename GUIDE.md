@@ -936,11 +936,11 @@ public List<User> retriveAllInactiveUsers() {
 
 ## _Get Inactive User By Id_
 
-By cosnuming thi GET HTTP Request:
+By cosnuming the GET HTTP Request:
 
 [___`http://localhost:8888/user-active/{id}`___](http://localhost:8888/user-active/{id})
 
-We get an specific inactive user. Internally is the same than [___Get Inactive User By Id___](#get-inactive-user-by-id). But, this time, we call [***findByActiveAndId***](#findByActiveAndId) with ___0___
+We get an specific inactive user. Internally is the same than [___Get Inactive User By Id___](#get-inactive-user-by-id). But, this time, we call [***findByActiveAndId***](#findByActiveAndId) with ___0___ and the fgottem _`id`_.
 
 ```java
 @GetMapping("/user-inactive/{id}")
