@@ -791,7 +791,7 @@ Once the object is prepared, we send it to the [***save***](#with-null-id) metho
 
 ## _Update User_
 
-The update's case is very similar create one, we'll also receive the user data (name, lastname, age), but this time we'll also receive a parameter in the URL, which indicates the id of the user which we want to update.
+The update's case is very similar to create one, we'll also receive the user data (name, lastname, age), but this time we'll also receive a parameter in the URL, which indicates the id of the user which we want to update.
 
 Thanks to the `@PutMapping` annotation, the following PUT HTTP Request is available: [___`http:localhost/8888/user/{id}`___](http:localhost/8888/user/{id}).
 
