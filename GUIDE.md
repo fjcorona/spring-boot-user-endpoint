@@ -980,6 +980,8 @@ public User deactiveUser(@PathVariable Integer id) {
 }
 ```
 
+The handler methods don't have a complex implementation, all they do is call the ___activeDeactiveUser___ method, with the _`id`_ received through the URL and with ___1___ to activate and ___0___ to deactivate.
+
 <details>
 	<summary>activeDeactiveUser</summary>
 
@@ -1008,8 +1010,11 @@ private User activeDeactiveUser(Integer id, Integer active) {
 	return savedUser;
 }
 ```
-
 </details>
+
+As in past methods where we need to perform an action on a specific element, the first thing we need to do is to validate that this element actually exists. If it doesn't exist, we return a _`User`_ instance with `null` values ​​to indicate that the user wasn't found.
+
+In case of finding the searched user, we update its _`active`_ property with the value that we have received in the parameters. We save the modified instance and return the result.
 
 [![go-up](pictures/go-up.png)](#menu)
 
@@ -1111,7 +1116,7 @@ You can see that the names of the JSON properties correspond to those of the cla
 
 ## _Get User By Id_
 
-___GET:___ `http://localhost:8888/users/`_`{{id}}`_
+___GET:___ `http://localhost:8888/user/10003`
 
 ```json
 {
@@ -1120,6 +1125,18 @@ ___GET:___ `http://localhost:8888/users/`_`{{id}}`_
     "lastname": "López",
     "age": 25,
     "active": 0
+}
+```
+
+___GET:___ `http://localhost:8888/user/10000`
+
+```json
+{
+	"id": null,
+	"name": null,
+	"lastname": null,
+	"age": null,
+	"active": null
 }
 ```
 
