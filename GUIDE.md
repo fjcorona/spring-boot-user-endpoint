@@ -956,6 +956,12 @@ public User retriveOneInactiveUserById(@PathVariable Integer id) {
 
 ## _Activate/Deactivate User_
 
+So far we've seen how to obtain active or inactive users, whether they are all or one. But we have not seen how they're activated or deactivated.
+
+For this, two PUT HTTP Request have been implemented:
+
+___`http://localhost:8888/user/active/{id}`___
+
 ```java
 @PutMapping("/user/active/{id}")
 public User activeUser(@PathVariable Integer id) {
@@ -963,6 +969,8 @@ public User activeUser(@PathVariable Integer id) {
 	return this.activeDeactiveUser(id, 1);
 }
 ```
+
+___`http://localhost:8888/user/deactive/{id}`___
 
 ```java
 @PutMapping("/user/deactive/{id}")
