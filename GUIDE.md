@@ -37,6 +37,8 @@
 	* [_Delete User_](#delete-user)
 	* [_Get All Active Users_](#get-all-active-users)
 	* [_Get Active User By Id_](#get-active-user-by-id)
+	* [_Get All Inactive Users_](#get-all-inactive-users)
+	* [_Get Inactive User By Id_](#get-inactive-user-by-id)
 	* [_Activate/Deactivate User_](#activatedeactivate-user)
 * [_Test Endpoints_](#test-endpoints)
 	* [_Get All Users_](#get-all-users-1)
