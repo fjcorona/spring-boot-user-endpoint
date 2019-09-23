@@ -94,7 +94,7 @@ server.port=8888
 
 I've selected the ___8888___ port, this way, my microservices will run in the next URL:
 
-[_http://localhost:8888_](http://localhost:8888)
+___`http://localhost:8888`___
 
 [![go-up](pictures/go-up.png)](#menu)
 
@@ -730,7 +730,7 @@ public List<User> retriveAllUsers() {
 }
 ```
 
-By annotating method with `@GetMapping("/users")` we define a GET request at [___`http://localhost:8888/users`___](http://localhost:8888/users)
+By annotating method with `@GetMapping("/users")` we define a GET request at ___`http://localhost:8888/users`___.
 
 [![go-up](pictures/go-up.png)](#menu)
 
@@ -738,7 +738,7 @@ By annotating method with `@GetMapping("/users")` we define a GET request at [__
 
 If what you want is to obtain a particular user, all you have to do is send the corresponding id to the user we are looking for through the url:
 
-[___`http://localhost:8888/user/{id}`___](http://localhost:8888/user/{id})
+___`http://localhost:8888/user/{id}`___
 
 Once again the annotation `@GetMapping` is responsible for defining our GET request, but now we indicate that our URL will receive the user's id, and that it'll also change dynamically according to the user we are looking for.
 
@@ -748,7 +748,7 @@ As we can see each URL has a method handler. There we must declare a parameter w
 
 In this way, if for example, we search for the user with id _`10001`_, our route would be:
 
-[___`http://localhost:8888/user/10001`___](http://localhost:8888/user/10001)
+___`http://localhost:8888/user/10001`___
 
 ```java
 @GetMapping("/user/{id}")
@@ -767,7 +767,7 @@ Once in the method, [***findById***](#findById) method is called with the receiv
 
 ## _Create User_
 
-To create a new user it's necessary to use an HTTP Request POST type at URL [___`http://localhost:8888/user`___](http://localhost:8888/user), this is achieved thanks to the `@PostMapping` annotation.
+To create a new user it's necessary to use an HTTP Request POST type at URL ___`http://localhost:8888/user`___, this is achieved thanks to the `@PostMapping` annotation.
 
 This URL will receive an object with the user data that we want to add: name, lastname and age. For this purpose the handler method receives a user object of type _`User`_, annotated with `@RequestBody`.
 
@@ -795,7 +795,7 @@ Once the object is prepared, we send it to the [***save***](#with-null-id) metho
 
 The update's case is very similar to create one, we'll also receive the user data (name, lastname, age), but this time we'll also receive a parameter in the URL, which indicates the id of the user which we want to update.
 
-Thanks to the `@PutMapping` annotation, the following PUT HTTP Request is available: [___`http://localhost:8888/user/{id}`___](http://localhost:8888/user/{id}).
+Thanks to the `@PutMapping` annotation, the following PUT HTTP Request is available: ___`http://localhost:8888/user/{id}`___.
 
 <details>
 	<summary>updateUser</summary>
@@ -841,7 +841,7 @@ As a result, our endpoint will return a user object with the updated data.
 
 ## _Delete User_
 
-The last basic CRUD operation is delete. Now we will use `@DeleteMapping` annotation, this way we define the next DELETE HTTP Request: [___`http://localhost:8888/user/{id}`___](http://localhost:8888/user/{id}), where we send the id of the user we want to remove.  
+The last basic CRUD operation is delete. Now we will use `@DeleteMapping` annotation, this way we define the next DELETE HTTP Request: ___`http://localhost:8888/user/{id}`___, where we send the id of the user we want to remove.  
 
 <details>
 	<summary>deleteUser</summary>
@@ -873,7 +873,7 @@ When we remove a user from the database, there is no going back, it's gone to ne
 
 The next GET endpoint:
 
-[___`http://localhost:8888/users-active`___](http://localhost:8888/users-active)
+___`http://localhost:8888/users-active`___
 
 Retrieves all active and just the active users, I mean, all those user whose `active` property is ___1___.
 
@@ -895,7 +895,7 @@ public List<User> retriveAllActiveUsers() {
 
 This method handler is implemented by the next GET HTTP Request:
 
-[___`http://localhost:8888/user-active/{id}`___](http://localhost:8888/user-active/{id})
+___`http://localhost:8888/user-active/{id}`___
 
 ```java
 @GetMapping("/user-active/{id}")
@@ -918,7 +918,7 @@ In case an active user is found, the method returns it, otherwise a new user wit
 
 The next GET endpoint:
 
-http://localhost:8888/users-inactive
+___`http://localhost:8888/users-inactive`___
 
 Retrieves all inactive and just the inactive users. Internally, method handler performances the same that the used by [***Get All Active Users***](#get-all-active-users), the only difference is that the [***findByActive***](#findByActive) method is called with ___0___ as argument.
 
@@ -938,7 +938,7 @@ public List<User> retriveAllInactiveUsers() {
 
 By cosnuming the GET HTTP Request:
 
-[___`http://localhost:8888/user-active/{id}`___](http://localhost:8888/user-active/{id})
+___`http://localhost:8888/user-active/{id}`___
 
 We get an specific inactive user. Internally is the same than [___Get Inactive User By Id___](#get-inactive-user-by-id). But, this time, we call [***findByActiveAndId***](#findByActiveAndId) with ___0___ and the fgottem _`id`_.
 
