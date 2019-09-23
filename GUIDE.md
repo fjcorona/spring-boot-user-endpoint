@@ -293,12 +293,12 @@ CREATE TABLE users (
 
 We can check it with the following screenshot of the log, where we can see how the table is created using ___Hibernate___.
 
-Remember we can see it due to `spring.jpa.show-sql` and `spring.jpa.properties.hibernate.format_sql` has been set as _true_.
+Remember we can see it due to `spring.jpa.show-sql` and `spring.jpa.properties.hibernate.format_sql` have been set as _true_.
 
 ![create-hibernate](pictures/database/create-hibernate.png)
 
 As it was mentioned, data types are made according to the values they are feed with. We can observe too that `VARCHAR` fields get by default 255 length.
-The definition of the files as `NOT NULL` or `PRIMARY KEY`are not from the SQL file, but there are from the annotations in the been, as we will see in the next section.
+The definition of the files as `NOT NULL` or `PRIMARY KEY`are not from the SQL file, but there are from the annotations in the bean, as we will see in the next section.
 
 [![go-up](pictures/go-up.png)](#menu)
 
