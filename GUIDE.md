@@ -362,7 +362,7 @@ public class User {
 
 ## _Entity_
 
-`@Entity` annotation defines that a class can be mapped to a table. Table name is derived from entity class name, it means that, for example, in this case, due to the name ___User___ of the clase, JPA automatically would try to match with a ***user*** table, but our table is called _**users**_, in plural, in this case we have to explicity indicate to the class, which table has to map, this is possible through `@Table` annotation:
+`@Entity` annotation defines that a class can be mapped to a table. Table name is derived from entity class name, it means that, for example, in this case, due to the name ___User___ of the class, JPA automatically would try to match with a ***user*** table, but our table is called _**users**_, in plural, in this case we have to explicity indicate to the class, which table has to map, this is possible through `@Table` annotation:
 
 ```java
 @Table(name = "users")
