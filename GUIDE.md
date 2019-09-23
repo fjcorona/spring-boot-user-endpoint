@@ -490,7 +490,7 @@ FROM
 
 ## _findById_
 
-We expect a single result Entity, ___User___ has been specified as a return type.
+We expect a single result Entity, An ***Optional*** of ___User___ has been specified as a return type.
 
 ```java
 Optional<User> findById(Integer id);
