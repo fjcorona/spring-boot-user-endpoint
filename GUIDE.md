@@ -839,6 +839,8 @@ As a result, our endpoint will return a user object with the updated data.
 
 ## _Delete User_
 
+The last basic CRUD operation is delete. Now we will use `@DeleteMapping` annotation, this way we define the next DELETE HTTP Request: [___`http:localhost/8888/user/{id}`___](http:localhost/8888/user/{id}), where we send the id of the user we want to remove.  
+
 <details>
 	<summary>deleteUser</summary>
 
@@ -856,6 +858,10 @@ public void deleteUser(@PathVariable Integer id) {
 }
 ```
 </details>
+
+The handler implementation is so easy, as in update case we use [***findById***](#findById) method to validate firts if the user actually exists. If we get a valid user we delete it from our database.
+
+The method doesn't return anything, when we get to the section where we will consume the endpoints we will see that we only receive a `200` code as response, indicating that everything went well. The plan is that in future versions of the repository, we are able to implementpersonalized and more descriptive responses, whso we can know if the user has been deleted or not.
 
 [![go-up](pictures/go-up.png)](#menu)
 
