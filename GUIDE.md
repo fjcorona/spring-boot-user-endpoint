@@ -371,7 +371,7 @@ public class User {
 }
 ```
 
-This way ___User___ class knows that is mapped with ***users*** table.
+This way ___User___ class knows that is mapped with ***users*** table from our database.
 
 [![go-up](pictures/go-up.png)](#menu)
 
