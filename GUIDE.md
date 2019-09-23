@@ -893,6 +893,10 @@ public List<User> retriveAllActiveUsers() {
 
 ## _Get Active User By Id_
 
+This method handler is implemented by the next GET HTTP Request:
+
+[___`http://localhost:8888/user-active/{id}`___](http://localhost:8888/user-active/{id})
+
 ```java
 @GetMapping("/user-active/{id}")
 public User retriveOneActiveUserById(@PathVariable Integer id) {
@@ -902,6 +906,11 @@ public User retriveOneActiveUserById(@PathVariable Integer id) {
 	return (user.isPresent()) ? user.get() : new User();
 }
 ```
+
+Once in the handler method, we call [***findByActiveAndId***](#findByActiveAndId) with ___1___ as the first parameter indicating we are looking for an active user, and the received _`id`_ to specify the user we are looking for.
+
+In case an active user is found, the method returns it, otherwise a new user with null values is retrieved.
+
 
 [![go-up](pictures/go-up.png)](#menu)
 
