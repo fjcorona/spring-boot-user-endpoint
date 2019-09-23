@@ -926,7 +926,6 @@ public User retriveOneInactiveUserById(@PathVariable Integer id) {
 	Optional<User> user = repository.findByActiveAndId(0, id);
 	// Return user if it was found, otherwise return an empty instance
 	return (user.isPresent()) ? user.get() : new User();
-}return (user.isPresent()) ? user.get() : new User();
 }
 ```
 
