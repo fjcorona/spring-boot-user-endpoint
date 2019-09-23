@@ -728,7 +728,7 @@ public List<User> retriveAllUsers() {
 }
 ```
 
-By annotating method with `@GetMapping("/users")` we define a GET request at [___`http:localhost/8888/users`___](http:localhost/8888/users)
+By annotating method with `@GetMapping("/users")` we define a GET request at [___`http://localhost:8888/users`___](http://localhost:8888/users)
 
 [![go-up](pictures/go-up.png)](#menu)
 
@@ -736,7 +736,7 @@ By annotating method with `@GetMapping("/users")` we define a GET request at [__
 
 If what you want is to obtain a particular user, all you have to do is send the corresponding id to the user we are looking for through the url:
 
-[___`http:localhost/8888/user/{id}`___](http:localhost/8888/user/{id})
+[___`http://localhost:8888/user/{id}`___](http://localhost:8888/user/{id})
 
 Once again the annotation `@GetMapping` is responsible for defining our GET request, but now we indicate that our URL will receive the user's id, and that it'll also change dynamically according to the user we are looking for.
 
@@ -746,7 +746,7 @@ As we can see each URL has a method handler. There we must declare a parameter w
 
 In this way, if for example, we search for the user with id _`10001`_, our route would be:
 
-[___`http:localhost/8888/user/10001`___](http:localhost/8888/user/10001)
+[___`http://localhost:8888/user/10001`___](http://localhost:8888/user/10001)
 
 ```java
 @GetMapping("/user/{id}")
@@ -765,7 +765,7 @@ Once in the method, [***findById***](#findById) method is called with the receiv
 
 ## _Create User_
 
-To create a new user it's necessary to use an HTTP Request POST type at URL [___`http:localhost/8888/user`___](http:localhost/8888/user), this is achieved thanks to the `@PostMapping` annotation.
+To create a new user it's necessary to use an HTTP Request POST type at URL [___`http://localhost:8888/user`___](http://localhost:8888/user), this is achieved thanks to the `@PostMapping` annotation.
 
 This URL will receive an object with the user data that we want to add: name, lastname and age. For this purpose the handler method receives a user object of type _`User`_, annotated with `@RequestBody`.
 
@@ -793,7 +793,7 @@ Once the object is prepared, we send it to the [***save***](#with-null-id) metho
 
 The update's case is very similar to create one, we'll also receive the user data (name, lastname, age), but this time we'll also receive a parameter in the URL, which indicates the id of the user which we want to update.
 
-Thanks to the `@PutMapping` annotation, the following PUT HTTP Request is available: [___`http:localhost/8888/user/{id}`___](http:localhost/8888/user/{id}).
+Thanks to the `@PutMapping` annotation, the following PUT HTTP Request is available: [___`http://localhost:8888/user/{id}`___](http://localhost:8888/user/{id}).
 
 <details>
 	<summary>updateUser</summary>
@@ -839,7 +839,7 @@ As a result, our endpoint will return a user object with the updated data.
 
 ## _Delete User_
 
-The last basic CRUD operation is delete. Now we will use `@DeleteMapping` annotation, this way we define the next DELETE HTTP Request: [___`http:localhost/8888/user/{id}`___](http:localhost/8888/user/{id}), where we send the id of the user we want to remove.  
+The last basic CRUD operation is delete. Now we will use `@DeleteMapping` annotation, this way we define the next DELETE HTTP Request: [___`http://localhost:8888/user/{id}`___](http://localhost:8888/user/{id}), where we send the id of the user we want to remove.  
 
 <details>
 	<summary>deleteUser</summary>
@@ -871,7 +871,7 @@ When we remove a user from the database, there is no going back, it's gone to ne
 
 The next GET endpoint:
 
-[___`http:localhost/8888/users-active`___](http:localhost/8888/users-active)
+[___`http://localhost:8888/users-active`___](http://localhost:8888/users-active)
 
 Retrieves all active and just the active users, I mean, all those user whose `active` property is ___1___.
 
@@ -991,7 +991,7 @@ private User activeDeactiveUser(Integer id, Integer active) {
 
 We just consume the next endpoint
 
-___GET:___ `http:localhost/8888/users`
+___GET:___ `http://localhost:8888/users`
 
 As a result, we obtain all the users with whom we initialize our database. But this time in ___JSON___ format, through which it is simpler and more standard to establish communication with any application that could consume our service.
 
@@ -1081,7 +1081,7 @@ You can see that the names of the JSON properties correspond to those of the cla
 
 ## _Get User By Id_
 
-___GET:___ `http:localhost/8888/users/`_`{{id}}`_
+___GET:___ `http://localhost:8888/users/`_`{{id}}`_
 
 ```json
 {
@@ -1097,7 +1097,7 @@ ___GET:___ `http:localhost/8888/users/`_`{{id}}`_
 
 ## _Add User_
 
-___POST:___ `http:localhost/8888/users`
+___POST:___ `http://localhost:8888/users`
 
 ___BODY REQUEST:___
 
@@ -1124,7 +1124,7 @@ ___RESPONSE:___
 
 ## _Update User_
 
-___PUT:___ `http:localhost/8888/users/`_`{{id}}`_
+___PUT:___ `http://localhost:8888/users/`_`{{id}}`_
 
 ___BODY REQUEST:___
 
@@ -1153,7 +1153,7 @@ ___RESPONSE:___
 ## _Delete User_
 
 
-___DELETE:___ `http:localhost/8888/users/`_`{{id}}`_
+___DELETE:___ `http://localhost:8888/users/`_`{{id}}`_
 
 [![go-up](pictures/go-up.png)](#menu)
 
