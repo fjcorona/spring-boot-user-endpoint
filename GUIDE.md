@@ -867,6 +867,16 @@ The method doesn't return anything, when we get to the section where we will con
 
 ## _Get All Active Users_
 
+When we remove a user from the database, there is no going back, it's gone to never return. If what we want is for our users to disappear from our interface but having the ability to make them reappear in the future, deleting them is not an option. For this purpose its best to provide the filters and mechanisms to activate and deactivate them.
+
+The next GET endpoint:
+
+[___`http:localhost/8888/users-active`___](http:localhost/8888/users-active)
+
+Retrieves all active and just the active users, I mean, all those user whose `active` property is ___1___.
+
+To do that [***findByActive***](#findByActive) method is called with ___1___ value.
+
 ```java
 @GetMapping("/users-active")
 public List<User> retriveAllActiveUsers() {
