@@ -39,6 +39,7 @@
 	* [_Get Active User By Id_](#get-active-user-by-id)
 	* [_Activate/Deactivate User_](#activatedeactivate-user)
 * [_Test Endpoints_](#test-endpoints)
+	* [_Import Collection_](#import-collection)
 	* [_Get All Users_](#get-all-users-1)
 	* [_Get User By Id_](#get-user-by-id-1)
 	* [_Add User_](#add-user)
@@ -50,7 +51,6 @@
 	* [_Get Inactive User By ID_](#get-inactive-user-by-id-1)
 	* [_Active User_](#active-user)
 	* [_Deactive User_](#deactive-user)
-	* [_Import Collection_](#import-collection)
 
 # _Introduction_
 
@@ -977,6 +977,10 @@ private User activeDeactiveUser(Integer id, Integer active) {
 
 [![go-up](pictures/go-up.png)](#menu)
 
+## _Import Collection_
+
+[![go-up](pictures/go-up.png)](#menu)
+
 ## _Get All Users_
 
 We just consume the next endpoint
@@ -1226,10 +1230,6 @@ ___DELETE:___ `http:localhost/8888/users/`_`{{id}}`_
 [![go-up](pictures/go-up.png)](#menu)
 
 ## _Deactive User_
-
-[![go-up](pictures/go-up.png)](#menu)
-
-## _Import Collection_
 
 [![go-up](pictures/go-up.png)](#menu)
 
